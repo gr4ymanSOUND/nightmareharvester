@@ -1,0 +1,35 @@
+{
+  "name": "nightmareharvester",
+  "homepage": "https://github.com/gr4ymanSOUND/nightmareharvester#readme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm run client:build",
+    "client:dev": "react-scripts start",
+    "client:build": "react-scripts build",
+    "start:dev": "concurrently \"npm run client:build\" \"npm run client:dev\"",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "concurrently": "^8.2.0",
+    "dotenv": "^16.3.1",
+    "js-tokens": "^4.0.0",
+    "loose-envify": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
+    "react-scripts": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gr4ymanSOUND/nightmareharvester.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gr4ymanSOUND/nightmareharvester/issues"
+  }
+}
