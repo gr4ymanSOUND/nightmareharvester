@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  touch-action: manipulation;
+}
+
+/* Body */
+body {
+  background-color: rgb(22,22,22);
+  color: white;
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-size: 20px;
+}
+
+#root {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+} 

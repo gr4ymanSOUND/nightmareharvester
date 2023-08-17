@@ -1,0 +1,29 @@
+/* Footer */
+
+footer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 4rem;
+  background-color: rgb(54, 1, 1);
+  color: rgb(187,136,136);
+
+  /* border-top: 1px rgb(54, 1, 1) solid; */
+  
+}
+
+.copyright {
+  text-align: center;
+  padding: .5rem 2rem;
+  font-size: 1rem;
+
+  border-top: 1px rgb(187,136,136) solid;
+
+  /* border-top: 3px rgb(89, 10, 10) solid; */
+}
+
+.social-media {
+  text-align: center;
+  padding: 1rem;
+
+}

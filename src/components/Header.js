@@ -12,8 +12,12 @@ const Header = ({ user, setUser, setToken }) => {
       setIsNavOpen(isNavOpen => !isNavOpen);
     }
 
-    const openLogin = () => {
+    const openLogin = (e) => {
+      e.preventDefault()
       setIsLoginOpen(isLoginOpen => !isLoginOpen);
+      // if (isNavOpen) {
+      //   setIsNavOpen(false);
+      // }
     }
 
     const logOut = () => {
@@ -41,14 +45,14 @@ const Header = ({ user, setUser, setToken }) => {
                 <Link to="/About">About</Link>
                 <Link to="/Contact">Contact</Link>
                 { !user ? (
+                  <>
                     <div className='header-user'>
                       {user.userName}
-                      <button onClick={logOut}>Log Out</button>
                     </div>
+                    <button className="user-button" onClick={logOut}>Log Out</button>
+                  </>
                   ) : (
-                    <div className='header-user'>
-                      <button onClick={openLogin}>Log In</button>
-                    </div>
+                      <button className="user-button" onClick={openLogin}>{isLoginOpen ? 'X' : 'Log In'}</button>
                     )
                   }
             </div>
