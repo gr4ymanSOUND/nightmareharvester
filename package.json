@@ -1,6 +1,6 @@
 {
   "name": "nightmareharvester",
-  "homepage": "https://github.com/gr4ymanSOUND/nightmareharvester#readme",
+  "homepage": "/",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -31,5 +31,17 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gr4ymanSOUND/nightmareharvester/issues"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

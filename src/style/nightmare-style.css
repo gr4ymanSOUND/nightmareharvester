@@ -15,21 +15,64 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   font-size: 20px;
-
-  /* border: 1px green solid; */
 }
 
+#root {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+} 
+
 /* Navigation Bar */
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  background-color: black;
+  color: white;
+}
+
 .navbar {
   position: relative;
   z-index: 100;
+  width: 100%;
   overflow: hidden;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+
+  /* border: 1px red solid; */
+
+}
+
+.other-nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
 
 .navbar a {
-  float: left;
+  min-width: 7rem;
   display: block;
-  color: #f2f2f2;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -37,49 +80,51 @@ body {
 }
 
 .navbar a:hover {
-  background-color: #ddd;
+  background-color: white;
   color: black;
 }
 
-.navbar a.active {
-  color: red;
-  border-bottom: 1px red solid;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.navbar .icon {
+.icon {
   display: none;
+  padding: 1rem;
+  margin: 0;
+  margin-left: auto;
+  align-self: flex-start;
 }
 
-/* Logo/Banner */
+.icon:hover {
+  background-color: white;
+  color: black;
+}
 
-.logo-container {
+/* Banner */
+
+.banner-container {
   position: relative;
   z-index: 0;
-  margin: 0 auto;
+  margin: -2rem auto;
   width: 100%;
   max-width: 900px;
 }
 
-#logo {
+#banner {
+  margin: -.5rem auto;
   width: 100%;
   height: auto;
 }
 
 /* Main Article Section */
 
-main {
+.home-page {
   position: relative;
-  margin: -2.5rem auto;
-  width: 90%;
+  margin: 0rem auto;
+  width: 100%;
   height: 100%;
-
-  /* border: 1px red solid; */
 }
 
 article {
   position: absolute;
-  top: 55%;
+  top: 43%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -106,34 +151,64 @@ article h2 {
   font-size: 3rem;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-  .navbar a:not(:first-child) {display: none;}
-  .navbar a.icon {
-    float: right;
-    display: block;
-  }
+/* Footer */
 
-  main {
-    margin: -1rem auto;
+footer {
+  margin-top: 4rem;
+  background-color: white;
+  color: black;
+
+  border: 1px red solid;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.social-media {
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .banner-container {
+    margin: -1.25rem auto;
   }
 
   article {
-    top: 70%;
+    top: 47%;
   }
 }
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
-  .navbar.responsive {position: relative;}
-  .navbar.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+  /* .navbar a:not(:first-child) {display: none;} */
+  
+  .navbar {
+    flex-flow: column nowrap;
+    justify-content: center;
   }
-  .navbar.responsive a {
-    float: none;
+  
+  .other-nav {
+    display: none;
+    width: 100%;
+  }
+  
+  .other-nav.open {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+  }
+
+  .icon {
     display: block;
-    text-align: left;
+  }
+
+  .banner-container {
+    margin: 0rem auto;
+  }
+
+  article {
+    top: 50%;
   }
 }
+
