@@ -38,12 +38,12 @@ const Header = ({ user, setUser, setToken }) => {
           <nav className="navbar" id="navcontainer">
               {/* <img id="logo" src={} alt="Logo" /> */}
               <div className="logo-container">
-                <Link to="/">Nightmare Harvester</Link>
+                <Link to="/" onClick={() => setIsNavOpen(false)}>Nightmare Harvester</Link>
               </div>
             <div className={`other-nav ${isNavOpen ? "open" : ""}`}>
-                <Link to="/Videos">Videos</Link>
-                <Link to="/About">About</Link>
-                <Link to="/Contact">Contact</Link>
+                <Link to="/Videos" onClick={() => setIsNavOpen(false)}>Videos</Link>
+                <Link to="/About" onClick={() => setIsNavOpen(false)}>About</Link>
+                <Link to="/Contact" onClick={() => setIsNavOpen(false)}>Contact</Link>
                 { !user ? (
                   <>
                     <div className='header-user'>
@@ -57,7 +57,7 @@ const Header = ({ user, setUser, setToken }) => {
                   }
             </div>
             {
-              isLoginOpen ? <Login setToken={setToken} setUser={setUser}/> : null
+              isLoginOpen ? <Login setToken={setToken} setUser={setUser} setIsLoginOpen={setIsLoginOpen}/> : null
             }
           </nav>
             <div className="icon" onClick={openNav}>

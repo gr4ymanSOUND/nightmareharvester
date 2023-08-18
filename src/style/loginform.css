@@ -58,6 +58,17 @@
   background-color: rgb(187,136,136);
 }
 
+/* for the register link */
+.login-form a {
+  font-size: .75rem;
+  padding: 10px;
+}
+
+.login-form a:hover {
+  background-color: rgba(22, 22, 22, 1.0);
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 600px) {
   .login-window {
     top: 0;

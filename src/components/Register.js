@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // import { loginUser } from "../axios-services";
 
-const Login = ({ setToken, setUser, setIsLoginOpen}) => {
+const Register = ({ setToken, setUser}) => {
 
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
@@ -30,8 +30,8 @@ const Login = ({ setToken, setUser, setIsLoginOpen}) => {
 
 
   return (
-    <div className='login-window'>
-      <form className='login-form' onSubmit={submitHandler}>
+    <div className='Register-window'>
+      <form className='Register-form' onSubmit={submitHandler}>
           <div className="input-section">
             <input
               type="text"
@@ -54,11 +54,10 @@ const Login = ({ setToken, setUser, setIsLoginOpen}) => {
               placeholder="********"
             />
           </div>
-          <button className="login-button" type='submit'>Log In</button>
-          <Link to="/Register" onClick={() => setIsLoginOpen(false)}>New? Register Here</Link>
+          <button className="Register-button" type='submit'>Create Account</button>
       </form>
     </div>
   )
 }
 
-export default Login;
+export default Register;

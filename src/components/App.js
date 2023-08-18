@@ -3,7 +3,11 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Header from './Header';
 import Login from './Login';
+import Register from './Register';
 import HomePage from './HomePage';
+import Videos from './Videos';
+import About from './About';
+import Contact from './Contact'
 import Footer from './Footer';
 import AdminTools from './AdminTools';
 
@@ -41,13 +45,38 @@ const App = () => {
                       <HomePage />
                     } 
                   />
-                  {/* <Route 
+                  <Route 
+                    exact path="/videos"
+                    element={
+                      <Videos />
+                    } 
+                  />
+                  <Route 
+                    exact path="/about"
+                    element={
+                      <About />
+                    } 
+                  />
+                  <Route 
+                    exact path="/contact"
+                    element={
+                      <Contact />
+                    } 
+                  />
+                  <Route 
+                    exact path="/register"
+                    element={
+                      token ? <Navigate to="/" replace /> :
+                      <Register />
+                    } 
+                  />
+                  <Route 
                     exact path="/admin"
                     element={
                       !user.isAdmin ? <Navigate to="/" replace /> :
                       <AdminTools user={user}/>
                     }
-                  /> */}
+                  />
               </Routes>
             <Footer />
         </BrowserRouter>
