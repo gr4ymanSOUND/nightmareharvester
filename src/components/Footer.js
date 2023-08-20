@@ -6,7 +6,18 @@ const Footer = () => {
     return (
         <footer>
             <div className="social-media">
-              Twitter Facebook Youtube Instagram
+              <a href='http://www.youtube.com' target="_blank">
+                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+              </a>
+              <a href='http://www.twitter.com' target="_blank">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href='http://www.facebook.com' target="_blank">
+                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+              </a>
+              <a href='http://www.instagram.com' target="_blank">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
             </div>
             <div className="copyright">
               &copy; 2023 Nightmare Harvester - All Rights Reserved

@@ -1,37 +1,29 @@
-.home-page {
+.content-container {
+  z-index: 5;
   position: relative;
-  margin: 0rem auto;
-  width: 100%;
-  height: 100%;
-}
+  margin: 3rem auto 0 auto;
+  width: 90%;
+  background-image: url(../img/nightmareLogo.jpeg);
+  background-repeat: no-repeat;
+  background-position: 50% 50px;
+  background-size: 500px;
+  background-attachment: fixed;
 
-/* Banner */
-
-.banner-container {
-  position: relative;
-  z-index: 0;
-  margin: -2rem auto;
-  width: 100%;
-  max-width: 900px;
-}
-
-#banner {
-  margin: -.5rem auto;
-  width: 100%;
-  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  /* this makes the content take up the rest of the page */
+  flex: 1;
 }
 
 /* Main Article Section */
 
 article {
-  z-index: 10;
-  position: absolute;
-  top: 43%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
   width: 90%;
+  max-width: 900px;
   padding: .5rem 2rem;
+  margin: 1rem auto;
 
   background-color: rgba(54, 1, 1, 0.70);
   box-shadow: 2px 1px 8px 3px rgba(0, 0, 0, 0.4);
@@ -58,12 +50,12 @@ article h2 {
 
 @media screen and (max-width: 600px) {
 
-  .banner-container {
-    margin: 0rem auto;
-  }
+.content-container {
+  width: 100%;
+}
 
-  article {
-    top: 50%;
-  }
+article {
+  width: 98%;
+}
   
 }

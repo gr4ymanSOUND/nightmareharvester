@@ -3,10 +3,8 @@ import React, { useState, useEffect } from 'react';
 const About = () => {
 
   return (
-    <div className="home-page">
-      <div className="banner-container" id="nightmare-banner">
-          <img src={require("../img/nightmareLogo.webp")} alt="Nightmare Banner" id="banner" />
-        </div>
+    <div className="content-container">
+
 
         <article>
           <div className="article-heading">

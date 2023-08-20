@@ -2,6 +2,7 @@ header {
   display: flex;
   flex-flow: row nowrap;
   width: 100vw;
+  min-height: 3rem;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -39,6 +40,8 @@ header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .navbar a {
@@ -80,6 +83,7 @@ header {
   color: rgb(187,136,136);
   min-width: 7rem;
   min-height: 2.5rem;
+  height: 100%;
 }
 
 .user-button:hover {
