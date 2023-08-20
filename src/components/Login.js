@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // import { loginUser } from "../axios-services";
 
-const Login = ({ setToken, setUser, setIsLoginOpen}) => {
+const Login = ({ setToken, setUser, setIsLoginOpen, setIsNavOpen}) => {
 
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
@@ -54,8 +54,13 @@ const Login = ({ setToken, setUser, setIsLoginOpen}) => {
               placeholder="********"
             />
           </div>
-          <button className="login-button" type='submit'>Log In</button>
-          <Link to="/Register" onClick={() => setIsLoginOpen(false)}>New? Register Here</Link>
+          <div className='login-register-buttons'>
+            <button className="login-button" type='submit'>Log In</button>
+            <Link to="/Register" onClick={() => {
+              setIsLoginOpen(false)
+              setIsNavOpen(false)
+              }}>New? Register Here</Link>
+          </div>
       </form>
     </div>
   )

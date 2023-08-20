@@ -57,7 +57,7 @@ const Header = ({ user, setUser, setToken }) => {
                   }
             </div>
             {
-              isLoginOpen ? <Login setToken={setToken} setUser={setUser} setIsLoginOpen={setIsLoginOpen}/> : null
+              isLoginOpen ? <Login setToken={setToken} setUser={setUser} setIsLoginOpen={setIsLoginOpen} setIsNavOpen={setIsNavOpen}/> : null
             }
           </nav>
             <div className="icon" onClick={openNav}>

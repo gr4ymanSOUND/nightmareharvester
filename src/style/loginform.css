@@ -13,7 +13,7 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  width: 15rem;
+  width: 20rem;
   padding: .5rem;
 
 
@@ -43,10 +43,16 @@
   padding: .5rem;
 }
 
+.login-register-buttons {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: .5rem;
+}
+
 .login-button {
   padding: 1rem 2rem;
-  margin-top: 1rem;
-
   background-color: rgb(54,1,1);
   color: rgb(187,136,136);
   border: none;
@@ -59,15 +65,20 @@
 }
 
 /* for the register link */
-.login-form a {
+.login-register-buttons a {
   font-size: .75rem;
   padding: 10px;
+  text-align: center;
+
+  /* the "navbar a" style in the header.css interferes here, so I have to add this min-width 0px to keep it from expanding in mobile view */
+  min-width: 0px;
 }
 
-.login-form a:hover {
+.login-register-buttons a:hover {
   background-color: rgba(22, 22, 22, 1.0);
   text-decoration: underline;
 }
+
 
 @media screen and (max-width: 600px) {
   .login-window {
@@ -78,4 +89,9 @@
   .login-form {
     width: 90vw;
   }
+
+  .login-register-buttons {
+    flex-flow: row nowrap;
+  }
+
 }
