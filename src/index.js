@@ -10,6 +10,7 @@ import './style/homepage.css';
 import './style/videos.css';
 import './style/footer.css';
 import './style/loginform.css';
+import './style/registerform.css';
 
 
 

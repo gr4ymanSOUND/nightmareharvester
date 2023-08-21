@@ -1,0 +1,24 @@
+.register-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 75%;
+  max-width: 900px;
+  padding: .5rem 2rem;
+  margin: 1rem auto;
+
+  background-color: rgba(54, 1, 1, 0.70);
+  box-shadow: 2px 1px 8px 3px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+
+}
+
+.register-form .input-section {
+  width: 80%;
+}
+
+.input-label {
+  padding: .5rem;
+}
