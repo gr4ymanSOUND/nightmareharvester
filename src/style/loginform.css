@@ -45,7 +45,7 @@
 
 .login-register-buttons {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   margin-top: .5rem;
@@ -88,6 +88,8 @@
 
   .login-form {
     width: 90vw;
+    min-height: 12rem;
+
   }
 
   .login-register-buttons {

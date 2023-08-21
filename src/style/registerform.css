@@ -6,6 +6,8 @@
 
   width: 75%;
   max-width: 900px;
+  min-height: 60vh;
+
   padding: .5rem 2rem;
   margin: 1rem auto;
 
@@ -15,10 +17,70 @@
 
 }
 
-.register-form .input-section {
-  width: 80%;
+.register-header {
+  text-align: center;
 }
 
-.input-label {
+.register-form .input-section {
+  width: 85%;
+  justify-content: space-between;
+}
+
+.input-section.other {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.register-form input {
+  width: 70%;
+  max-width: 400px;
+}
+
+.other select {
   padding: .5rem;
+  width: 5rem;
+  height: 100%;
+  border: none;
+  margin-left: 1rem;
+}
+
+.other .input-label {
+  padding: .5rem;
+  text-align: center;
+}
+
+.checkbox {
+  margin-left: -25%;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.register-button {
+  margin: 1.5rem auto;
+  padding: 1.5rem 2rem;
+  background-color: rgb(54,1,1);
+  color: rgb(187,136,136);
+  border: none;
+  box-shadow: 1px 1px 8px -3px rgb(0,0,0, 0.4);
+}
+
+.register-button:hover {
+  color: rgb(54,1,1);
+  background-color: rgb(187,136,136);
+}
+
+
+@media screen and (max-width: 600px) {
+  .register-form {
+    width: 98%;
+  }
+
+  .checkbox {
+    margin-left: -25%;
+  }
+
 }

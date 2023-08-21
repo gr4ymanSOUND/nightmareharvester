@@ -65,6 +65,9 @@ const Register = ({ setToken, setUser}) => {
   return (
     <div className='content-container'>
       <form className='register-form' onSubmit={submitHandler}>
+      <div className='register-header'>
+        <h2>Enter Your Details to Create an Account</h2>
+      </div>
         <div className="input-section">
           <label className="input-label">UserName</label>
           <input
@@ -95,12 +98,13 @@ const Register = ({ setToken, setUser}) => {
             onChange={({ target: { value } }) => setUserEmail(value)}
             className="form-control"
             id="userEmail"
-            placeholder="user2023@stratabore.com"
+            placeholder="user2023@website.com"
           />
         </div>
-        <div className='input-section checkbox'>
+        <div className='input-section other'>
           <label className='input-label'>Allow Email Notifications?</label>
           <input
+            className='checkbox'
             type="checkbox"
             id="allowEmail"
             name="allowEmail"
@@ -108,7 +112,7 @@ const Register = ({ setToken, setUser}) => {
             onChange={handleEmailChange}
           />
         </div>
-        <div className="input-section">
+        {/* <div className="input-section other">
           <label className="input-label">Status</label>
           <select
             id="userStatus"
@@ -119,8 +123,8 @@ const Register = ({ setToken, setUser}) => {
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>
           </select>
-        </div>
-        <button className="submit-button" type='submit'>Save and Submit</button>
+        </div> */}
+        <button className="register-button" type='submit'>Create Your Account</button>
       </form>
     </div>
   )
