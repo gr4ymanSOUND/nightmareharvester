@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// import { getAllUsers, editUser, removeUser, createUser } from '../axios-services';
+import { createUser, loginUser } from '../axios-services';
 
-const Register = ({ setToken, setUser}) => {
+const Register = ({ setToken, setUser }) => {
   
   const navigate = useNavigate();
 
-  const [userName, setUserName] = useState('');
+  const [username, setUsername] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [allowEmail, setAllowEmail] = useState(false);
@@ -18,38 +18,48 @@ const Register = ({ setToken, setUser}) => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    if (userName=='' || userEmail=='' || userPassword=='') {
+    if (username=='' || userEmail=='' || userPassword=='') {
       alert('Please fill in all available fields before submitting');
       return;
     }
 
+    // we need to set the key for allowEmail here to be spelled the proper way for the SQL database ---> allow_email
     const newUser = {
-      userName: userName,
+      username: username,
       password: userPassword,
       email: userEmail,
-      allowEmail: allowEmail,
+      allow_email: allowEmail,
       status: userStatus
     }
 
-    if (formType == 'add-user') {
-      const response = await createUser(token, newUser);
-      alert(`A new user for ${newUser.userName} has been created.`);
-    }
-    if (formType == 'edit-user') {
-      delete newUser.password;
-      const userId = currentSelected.id;
-      const response = await editUser(token, userId, newUser)
-      alert(`${newUser.userName} has been edited.`);
-    }
+    console.log('user to create', newUser);
+
+    // first create the user, then actually log them in right after
+    const createdUser = await createUser(newUser);
+    console.log('createdUser after register', createdUser)
+
+    const response = await loginUser(newUser.username, newUser.password);
+    setToken(response.token);
+    setUser(response.user);
+    localStorage.setItem("userToken", response.token);
+
+    // We are curerntly only allowing adding users, at least on this route
+    // keeping the code commented out for eventual use in the userInfo component
+
+    // if (formType == 'edit-user') {
+    //   delete newUser.password;
+    //   const userId = currentSelected.id;
+    //   const response = await editUser(token, userId, newUser)
+    //   alert(`${newUser.username} has been edited.`);
+    // }
     
     //reset form state after sumbission
-    setUserName('');
+    setUsername('');
     setUserPassword('');
     setUserEmail('');
     setAllowEmail(false);
     setIsChecked(false);
-    setUserStatus('active')
-
+    setUserStatus('active');
 
     // redirect after submission
     navigate('/', {replace: true});
@@ -69,20 +79,20 @@ const Register = ({ setToken, setUser}) => {
         <h2>Enter Your Details to Create an Account</h2>
       </div>
         <div className="input-section">
-          <label className="input-label">UserName</label>
+          <label className="input-label">Username</label>
           <input
             type="text"
-            value={userName}
-            onChange={({ target: { value } }) => setUserName(value)}
+            value={username}
+            onChange={({ target: { value } }) => setUsername(value)}
             className="form-control"
-            id="userName"
+            id="username"
             placeholder="user2023"
           />
         </div>
         <div className="input-section">
           <label className="input-label">Password</label>
           <input
-            type="text"
+            type="password"
             value={userPassword}
             onChange={({ target: { value } }) => setUserPassword(value)}
             className="form-control"

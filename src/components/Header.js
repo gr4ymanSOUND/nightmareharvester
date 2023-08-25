@@ -1,70 +1,77 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Login from './Login';
 
 const Header = ({ user, setUser, setToken }) => {
 
-    const [ isNavOpen, setIsNavOpen ] = useState(false);
-    const [ isLoginOpen, setIsLoginOpen ] = useState(false);
-  
-    const openNav = () => {
-      setIsNavOpen(isNavOpen => !isNavOpen);
-    }
+  const navigate = useNavigate();
 
-    const openLogin = (e) => {
-      e.preventDefault()
-      setIsLoginOpen(isLoginOpen => !isLoginOpen);
-      // if (isNavOpen) {
-      //   setIsNavOpen(false);
-      // }
-    }
 
-    const logOut = () => {
-      setToken(null);
-      setUser(null);
-      localStorage.removeItem('userToken');
-    }
+  const [ isNavOpen, setIsNavOpen ] = useState(false);
+  const [ isLoginOpen, setIsLoginOpen ] = useState(false);
 
-      // think about adding something to style the currently active page?
+  const openNav = () => {
+    setIsNavOpen(isNavOpen => !isNavOpen);
+  }
 
-      // make clicking on username take you to a user-info page
-      // admins will have their tools there
+  const openLogin = (e) => {
+    e.preventDefault();
+    setIsLoginOpen(isLoginOpen => !isLoginOpen);
+  }
 
-      // how to image source src={require("../img/stratabore-logo-transparent.png")} 
+  const openAccountDetails = (e) => {
+    e.preventDefault();
+    navigate('/account', {replace: true});
+  }
 
-    return (
-        <header>
-          <nav className="navbar" id="navcontainer">
-              {/* <img id="logo" src={} alt="Logo" /> */}
-              <div className="logo-container">
-                <Link to="/" onClick={() => setIsNavOpen(false)}>Nightmare Harvester</Link>
+  const logOut = () => {
+    setToken(null);
+    setUser(null);
+    localStorage.removeItem('userToken');
+  }
+
+    // think about adding something to style the currently active page?
+
+    // make clicking on username take you to a user-info page
+    // admins will have their tools there
+
+    // how to image source src={require("../img/stratabore-logo-transparent.png")} 
+
+  return (
+    <header>
+      <nav className="navbar" id="navcontainer">
+        {/* <img id="logo" src={} alt="Logo" /> */}
+        <div className="logo-container">
+          <Link to="/" onClick={() => setIsNavOpen(false)}>Nightmare Harvester</Link>
+        </div>
+        <div className={`other-nav ${isNavOpen ? "open" : ""}`}>
+          <Link to="/Videos" onClick={() => setIsNavOpen(false)}>Videos</Link>
+          <Link to="/About" onClick={() => setIsNavOpen(false)}>About</Link>
+          <Link to="/Contact" onClick={() => setIsNavOpen(false)}>Contact</Link>
+          { user ? (
+            <>
+              <div className='header-user' onClick={openAccountDetails}>
+                <div>
+                  {user.username}
+                </div>
               </div>
-            <div className={`other-nav ${isNavOpen ? "open" : ""}`}>
-                <Link to="/Videos" onClick={() => setIsNavOpen(false)}>Videos</Link>
-                <Link to="/About" onClick={() => setIsNavOpen(false)}>About</Link>
-                <Link to="/Contact" onClick={() => setIsNavOpen(false)}>Contact</Link>
-                { !user ? (
-                  <>
-                    <div className='header-user'>
-                      {user.userName}
-                    </div>
-                    <button className="user-button" onClick={logOut}>Log Out</button>
-                  </>
-                  ) : (
-                      <button className="user-button" onClick={openLogin}>{isLoginOpen ? 'X' : 'Log In'}</button>
-                    )
-                  }
-            </div>
-            {
-              isLoginOpen ? <Login setToken={setToken} setUser={setUser} setIsLoginOpen={setIsLoginOpen} setIsNavOpen={setIsNavOpen}/> : null
+              <button className="user-button small" onClick={logOut}>Log Out</button>
+            </>
+            ) : (
+                <button className="user-button" onClick={openLogin}>{isLoginOpen ? 'X' : 'Log In'}</button>
+              )
             }
-          </nav>
-            <div className="icon" onClick={openNav}>
-              <i className="fa fa-bars"></i>
-            </div>
-        </header>
-    )
+        </div>
+        {
+          isLoginOpen ? <Login setToken={setToken} setUser={setUser} setIsLoginOpen={setIsLoginOpen} setIsNavOpen={setIsNavOpen}/> : null
+        }
+      </nav>
+        <div className="icon" onClick={openNav}>
+          <i className="fa fa-bars"></i>
+        </div>
+    </header>
+  )
 
 }
 

@@ -86,9 +86,31 @@ header {
   height: 100%;
 }
 
+.user-button.small {
+  min-width: 3rem;
+  font-size: .75rem;
+}
+
 .user-button:hover {
   color: rgb(54,1,1);
   background-color: rgb(187,136,136);
+}
+
+.header-user {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  min-width: fit-content;
+  height: 100%;
+  padding: 0 10px;
+
+  color: white;
+  font-size: .75rem;
+}
+
+.header-user:hover {
+  background-color: rgb(54,1,1);;
 }
 
 /* MOBILE */

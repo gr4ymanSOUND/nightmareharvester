@@ -9,10 +9,11 @@ import Videos from './Videos';
 import About from './About';
 import Contact from './Contact'
 import Footer from './Footer';
+import AccountDetails from './AccountDetails';
 import AdminTools from './AdminTools';
 
 // NO DB OR API STUFF YET
-// import { getMe } from '../axios-services';
+import { getMe } from '../axios-services';
 
 const App = () => {
   // state  and useEffect dealing with user details for logged in users
@@ -20,15 +21,15 @@ const App = () => {
   const [ token, setToken ] = useState(tokenFromStorage);
   const [ user, setUser ] = useState({});
 
-  // useEffect(() => {
-  //   const getUserInfo = async () => {
-  //     const userInfo = await getMe(token);
-  //     return setUser(userInfo);
-  //   }
-  //   if (token) {
-  //     getUserInfo();
-  //   }
-  // }, [token]);
+  useEffect(() => {
+    const getUserInfo = async () => {
+      const userInfo = await getMe(token);
+      return setUser(userInfo);
+    }
+    if (token) {
+      getUserInfo();
+    }
+  }, [token]);
 
   //contains the routes for each main page
     return (
@@ -67,14 +68,22 @@ const App = () => {
                     exact path="/register"
                     element={
                       token ? <Navigate to="/" replace /> :
-                      <Register />
+                      <Register setToken={setToken} setUser={setUser}/>
                     } 
                   />
-                  <Route 
+                  {/* the database currently doesn't have an isAdmin set up for the user, so this won't work. we don't have any admin tools set up anyway, so that's fine */}
+                  {/* <Route 
                     exact path="/admin"
                     element={
                       !user.isAdmin ? <Navigate to="/" replace /> :
                       <AdminTools user={user}/>
+                    }
+                  /> */}
+                  <Route 
+                    exact path="/account"
+                    element={
+                      !user ? <Navigate to="/" replace /> :
+                      <AccountDetails user={user}/>
                     }
                   />
               </Routes>

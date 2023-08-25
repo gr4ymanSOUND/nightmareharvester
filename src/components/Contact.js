@@ -16,12 +16,12 @@ const About = () => {
           </div>
           <p>
             This will have a list of:
-            <ul>
+          </p>
+          <ul>
               <li>email contact</li>
               <li>phone number</li>
               <li>social media</li>
             </ul>
-          </p>
           
         </article>
     </div>

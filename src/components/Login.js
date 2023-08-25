@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// import { loginUser } from "../axios-services";
+import { loginUser } from "../axios-services";
 
 const Login = ({ setToken, setUser, setIsLoginOpen, setIsNavOpen}) => {
 
-    const [userName, setUserName] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const submitHandler = async (e) =>{
       e.preventDefault()
 
       // quick pop-up prompt if the user left a field blank
-      if (!userName || !password) {
+      if (!username || !password) {
         alert('Please enter a username and/or password!')
         return;
       }
 
       // call API to attempt to log in
-      // const response = await loginUser(userName, password);
-      // setToken(response.token);
-      // setUser(response.user);
-      // localStorage.setItem("userToken", response.token);
+      const response = await loginUser(username, password);
+      setToken(response.token);
+      setUser(response.user);
+      localStorage.setItem("userToken", response.token);
 
       // reset state for the form
-      setUserName("");
+      setUsername("");
       setPassword("");
     }
 
@@ -36,8 +36,8 @@ const Login = ({ setToken, setUser, setIsLoginOpen, setIsNavOpen}) => {
             <input
               type="text"
               minLength={'6'}
-              value={userName}
-              onChange={({ target: { value } }) => setUserName(value)}
+              value={username}
+              onChange={({ target: { value } }) => setUsername(value)}
               className="form-control"
               id="user"
               placeholder="UserName"
