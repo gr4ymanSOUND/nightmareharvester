@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { createUser, loginUser } from '../axios-services';
 
-const Register = ({ setToken, setUser }) => {
+const Register = ({ setToken, setUser}) => {
   
   const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ const Register = ({ setToken, setUser }) => {
       status: userStatus
     }
 
-    console.log('user to create', newUser);
+    console.log('user to create', newUser)
 
     // first create the user, then actually log them in right after
     const createdUser = await createUser(newUser);

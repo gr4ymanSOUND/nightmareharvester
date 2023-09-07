@@ -21,11 +21,13 @@ const Login = ({ setToken, setUser, setIsLoginOpen, setIsNavOpen}) => {
       const response = await loginUser(username, password);
       setToken(response.token);
       setUser(response.user);
-      localStorage.setItem("userToken", response.token);
+      localStorage.setItem("nightmareHarvesterToken", response.token);
 
       // reset state for the form
       setUsername("");
       setPassword("");
+      setIsLoginOpen(false);
+      setIsNavOpen(false);
     }
 
 

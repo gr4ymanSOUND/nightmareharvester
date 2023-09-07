@@ -17,7 +17,7 @@ import { getMe } from '../axios-services';
 
 const App = () => {
   // state  and useEffect dealing with user details for logged in users
-  const tokenFromStorage = localStorage.getItem('userToken');
+  const tokenFromStorage = localStorage.getItem('nightmareHarvesterToken');
   const [ token, setToken ] = useState(tokenFromStorage);
   const [ user, setUser ] = useState({});
 
@@ -83,7 +83,7 @@ const App = () => {
                     exact path="/account"
                     element={
                       !user ? <Navigate to="/" replace /> :
-                      <AccountDetails user={user}/>
+                      <AccountDetails token={token} user={user} setUser={setUser}/>
                     }
                   />
               </Routes>

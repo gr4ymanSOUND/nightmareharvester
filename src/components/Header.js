@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 
 import Login from './Login';
 
@@ -7,11 +7,11 @@ const Header = ({ user, setUser, setToken }) => {
 
   const navigate = useNavigate();
 
-
   const [ isNavOpen, setIsNavOpen ] = useState(false);
   const [ isLoginOpen, setIsLoginOpen ] = useState(false);
 
-  const openNav = () => {
+  const openNav = (e) => {
+    e.preventDefault();
     setIsNavOpen(isNavOpen => !isNavOpen);
   }
 
@@ -22,19 +22,18 @@ const Header = ({ user, setUser, setToken }) => {
 
   const openAccountDetails = (e) => {
     e.preventDefault();
+    setIsNavOpen(false);
     navigate('/account', {replace: true});
   }
 
-  const logOut = () => {
+  const logOut = (e) => {
+    e.preventDefault();
     setToken(null);
     setUser(null);
-    localStorage.removeItem('userToken');
+    localStorage.removeItem('nightmareHarvesterToken');
   }
 
     // think about adding something to style the currently active page?
-
-    // make clicking on username take you to a user-info page
-    // admins will have their tools there
 
     // how to image source src={require("../img/stratabore-logo-transparent.png")} 
 
@@ -43,15 +42,36 @@ const Header = ({ user, setUser, setToken }) => {
       <nav className="navbar" id="navcontainer">
         {/* <img id="logo" src={} alt="Logo" /> */}
         <div className="logo-container">
-          <Link to="/" onClick={() => setIsNavOpen(false)}>Nightmare Harvester</Link>
+          <NavLink 
+            to="/"
+            onClick={() => setIsNavOpen(false)}
+          >Nightmare Harvester</NavLink>
         </div>
         <div className={`other-nav ${isNavOpen ? "open" : ""}`}>
-          <Link to="/Videos" onClick={() => setIsNavOpen(false)}>Videos</Link>
-          <Link to="/About" onClick={() => setIsNavOpen(false)}>About</Link>
-          <Link to="/Contact" onClick={() => setIsNavOpen(false)}>Contact</Link>
-          { user ? (
+          <NavLink
+            to="/Videos"
+            onClick={() => setIsNavOpen(false)}
+            className={({isActive}) => {
+              return isActive ? 'active-link' : ''
+            }}
+          >Videos</NavLink>
+          <NavLink
+            to="/About"
+            onClick={() => setIsNavOpen(false)}
+            className={({isActive}) => {
+              return isActive ? 'active-link' : ''
+            }}         
+            >About</NavLink>
+          <NavLink
+            to="/Contact"
+            onClick={() => setIsNavOpen(false)}
+            className={({isActive}) => {
+              return isActive ? 'active-link' : ''
+            }}          
+            >Contact</NavLink>
+          { Object.keys(user).length != 0 ? (
             <>
-              <div className='header-user' onClick={openAccountDetails}>
+              <div className={'header-user'} onClick={openAccountDetails}>
                 <div>
                   {user.username}
                 </div>

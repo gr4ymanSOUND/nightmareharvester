@@ -58,6 +58,14 @@ header {
   background-color: rgb(54,1,1);
 }
 
+.navbar a:active {
+  background-color: rgb(54,1,1);
+}
+
+.active-link {
+  background-color: rgb(54,1,1);
+}
+
 .icon {
   display: none;
   padding: 1rem;
@@ -107,6 +115,7 @@ header {
 
   color: white;
   font-size: .75rem;
+  border-bottom: 3px rgb(54,1,1) solid;
 }
 
 .header-user:hover {

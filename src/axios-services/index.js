@@ -65,6 +65,8 @@ export async function createUser(newUserData) {
 }
 
 export async function editUser(token, userId, newUserData) {
+
+  console.log('axios token for edit', token)
   try {
     const auth = {
       headers: {
@@ -77,7 +79,11 @@ export async function editUser(token, userId, newUserData) {
     const { data } = await axios.patch(`/api/users/${userId}`, newUserData, auth);
     return data;
   } catch (error) {
-    console.error(error)
+    console.error(error);
+    // handles alerting the user when we hit our custom error for editing passwords
+    if (error.response.data) {
+      alert(error.response.data);
+    }
   }
 }
 
