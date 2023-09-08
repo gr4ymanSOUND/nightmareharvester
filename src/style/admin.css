@@ -1,0 +1,8 @@
+.admin-tool {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px green solid;
+  text-align: center;
+}

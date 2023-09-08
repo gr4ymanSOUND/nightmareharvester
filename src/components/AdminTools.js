@@ -5,16 +5,16 @@ import React, { useState, useEffect } from 'react';
 const AdminTools = ({user}) => {
 
   return (
-    <>
+    <div className='content-container'>
       {
-        user.isAdmin ? (
-          <div className='admin-tools'>
-            <div className='tool'>THIS PAGE IS EMPTY</div>
-            <div className='tool'>BUT THERE WILL BE ADMIN STUFF HERE LIKE USER LISTS AND WAYS TO ADD/UPDATE VIDEOS</div>
-          </div>
+        user.is_admin == 1 ? (
+          <article>
+            <div className='admin-tool'>THIS PAGE IS EMPTY</div>
+            <div className='admin-tool'>BUT THERE WILL BE ADMIN STUFF HERE LIKE USER LISTS AND WAYS TO ADD/UPDATE VIDEOS</div>
+          </article>
         ) : null
       }
-    </>
+    </div>
 )
 
 };

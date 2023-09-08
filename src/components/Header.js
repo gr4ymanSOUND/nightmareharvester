@@ -29,7 +29,7 @@ const Header = ({ user, setUser, setToken }) => {
   const logOut = (e) => {
     e.preventDefault();
     setToken(null);
-    setUser(null);
+    setUser({});
     localStorage.removeItem('nightmareHarvesterToken');
   }
 
@@ -62,13 +62,6 @@ const Header = ({ user, setUser, setToken }) => {
               return isActive ? 'active-link' : ''
             }}         
             >About</NavLink>
-          <NavLink
-            to="/Contact"
-            onClick={() => setIsNavOpen(false)}
-            className={({isActive}) => {
-              return isActive ? 'active-link' : ''
-            }}          
-            >Contact</NavLink>
           { Object.keys(user).length != 0 ? (
             <>
               <div className={'header-user'} onClick={openAccountDetails}>
@@ -81,7 +74,7 @@ const Header = ({ user, setUser, setToken }) => {
             ) : (
                 <button className="user-button" onClick={openLogin}>{isLoginOpen ? 'X' : 'Log In'}</button>
               )
-            }
+          }
         </div>
         {
           isLoginOpen ? <Login setToken={setToken} setUser={setUser} setIsLoginOpen={setIsLoginOpen} setIsNavOpen={setIsNavOpen}/> : null

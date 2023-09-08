@@ -53,7 +53,7 @@ const AccountDetails = ({ token, user, setUser}) => {
 
   // this will contain the axios call for deleting the current user. it should just deactivate their account
   const deleteAccount = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (confirm(`Are you sure you want to delete your account? `)) {
       // const result = await removeUser(token, user.id);
       alert(`Your account has been deleted. To recover the account later, you can register again with the same username and email address.`);
@@ -62,12 +62,20 @@ const AccountDetails = ({ token, user, setUser}) => {
     navigate('/', {replace: true});
   }
 
+  const goToAdmin = (e) => {
+    e.preventDefault();
+    navigate('/admin', {replace: true});
+  }
+
 
   return (
     <div className="content-container">
       <form className='register-form' onSubmit={submitHandler}>
-        <div className='register-header'>
+        <div className='account-detail-header'>
           <h2>Hello {user.username}!</h2>
+          {
+            user.is_admin != 1 ? null : <button className='register-button' id='admin-tool-button' onClick={goToAdmin}>Admin Tools</button>
+          }
         </div>
         <div className="input-section">
           <h3>Edit Your Account: </h3>

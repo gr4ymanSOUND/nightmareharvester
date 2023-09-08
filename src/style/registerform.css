@@ -21,6 +21,19 @@
   text-align: center;
 }
 
+.account-detail-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.account-detail-header button {
+  margin: 0;
+  padding: .5rem 1rem;
+}
+
 .register-form .input-section {
   width: 85%;
   justify-content: space-between;
@@ -61,7 +74,7 @@
 
 .register-button {
   margin: 1.5rem auto;
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 1.5rem;
   background-color: rgb(54,1,1);
   color: rgb(187,136,136);
   border: none;

@@ -7,7 +7,6 @@ import Register from './Register';
 import HomePage from './HomePage';
 import Videos from './Videos';
 import About from './About';
-import Contact from './Contact'
 import Footer from './Footer';
 import AccountDetails from './AccountDetails';
 import AdminTools from './AdminTools';
@@ -59,12 +58,6 @@ const App = () => {
                     } 
                   />
                   <Route 
-                    exact path="/contact"
-                    element={
-                      <Contact />
-                    } 
-                  />
-                  <Route 
                     exact path="/register"
                     element={
                       token ? <Navigate to="/" replace /> :
@@ -72,17 +65,17 @@ const App = () => {
                     } 
                   />
                   {/* the database currently doesn't have an isAdmin set up for the user, so this won't work. we don't have any admin tools set up anyway, so that's fine */}
-                  {/* <Route 
+                  <Route 
                     exact path="/admin"
                     element={
-                      !user.isAdmin ? <Navigate to="/" replace /> :
+                      user.is_admin != 1 ? <Navigate to="/" replace /> :
                       <AdminTools user={user}/>
                     }
-                  /> */}
+                  />
                   <Route 
                     exact path="/account"
                     element={
-                      !user ? <Navigate to="/" replace /> :
+                      Object.keys(user).length == 0 ? <Navigate to="/" replace /> :
                       <AccountDetails token={token} user={user} setUser={setUser}/>
                     }
                   />
