@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { getAllVideos, createNewVideo, updateVideo } from '../axios-services';
+import { getAllVideos } from '../axios-services';
 
 const Videos = () => {
 

@@ -23,7 +23,7 @@ const App = () => {
   useEffect(() => {
     const getUserInfo = async () => {
       const userInfo = await getMe(token);
-      return setUser(userInfo);
+      setUser(userInfo);
     }
     if (token) {
       getUserInfo();
@@ -69,7 +69,7 @@ const App = () => {
                     exact path="/admin"
                     element={
                       user.is_admin != 1 ? <Navigate to="/" replace /> :
-                      <AdminTools user={user}/>
+                      <AdminTools token={token} user={user}/>
                     }
                   />
                   <Route 
