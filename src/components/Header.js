@@ -23,6 +23,7 @@ const Header = ({ user, setUser, setToken }) => {
   const openAccountDetails = (e) => {
     e.preventDefault();
     setIsNavOpen(false);
+    window.scrollTo(0,0);
     navigate('/account', {replace: true});
   }
 
@@ -31,6 +32,11 @@ const Header = ({ user, setUser, setToken }) => {
     setToken(null);
     setUser({});
     localStorage.removeItem('nightmareHarvesterToken');
+  }
+
+  const navLinkClick = () => {
+    setIsNavOpen(false);
+    window.scrollTo(0,0);
   }
 
     // think about adding something to style the currently active page?
@@ -44,20 +50,20 @@ const Header = ({ user, setUser, setToken }) => {
         <div className="logo-container">
           <NavLink 
             to="/"
-            onClick={() => setIsNavOpen(false)}
+            onClick={navLinkClick}
           >Nightmare Harvester</NavLink>
         </div>
         <div className={`other-nav ${isNavOpen ? "open" : ""}`}>
           <NavLink
             to="/Videos"
-            onClick={() => setIsNavOpen(false)}
+            onClick={navLinkClick}
             className={({isActive}) => {
               return isActive ? 'active-link' : ''
             }}
           >Videos</NavLink>
           <NavLink
             to="/About"
-            onClick={() => setIsNavOpen(false)}
+            onClick={navLinkClick}
             className={({isActive}) => {
               return isActive ? 'active-link' : ''
             }}         
