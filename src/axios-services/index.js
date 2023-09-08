@@ -51,8 +51,6 @@ export async function getAllUsers(token) {
 }
 
 export async function createUser(newUserData) {
-
-  console.log('new user data in axios', newUserData);
   try {
     const payload = {
       newUserData: newUserData
@@ -65,17 +63,16 @@ export async function createUser(newUserData) {
 }
 
 export async function editUser(token, userId, newUserData) {
-
-  console.log('axios token for edit', token)
   try {
     const auth = {
       headers: {
         Authorization: `Bearer ${token}`
       }
     };
-    const payload = {
-      newUserData: newUserData
-    }
+    // not sure why I switched from using the payload to just the raw newuserdata, but it's currently working as far as I know so I won't change it
+    // const payload = {
+    //   newUserData: newUserData
+    // }
     const { data } = await axios.patch(`/api/users/${userId}`, newUserData, auth);
     return data;
   } catch (error) {
@@ -98,5 +95,50 @@ export async function removeUser(token, userId) {
     return data;
   } catch (error) {
     console.error(error);
+  }
+}
+
+// VIDEO CALLS
+
+export async function getAllVideos() {
+  try {
+    const { data } = await axios.get(`/api/videos/`);
+    return data;
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export async function createNewVideo(token, newVideoInfo) {
+  try {
+    const auth = {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    };
+    const payload = {
+      newVideoInfo: newVideoInfo
+    }
+    const { data } = await axios.post(`/api/users/create`, payload, auth);
+    return data;
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export async function updateVideo(token, videoInfo) {
+  try {
+    const auth = {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    };
+    const payload = {
+      videoInfo: videoInfo
+    }
+    const { data } = await axios.post(`/api/users/create`, payload, auth);
+    return data;
+  } catch (error) {
+    console.error(error)
   }
 }
