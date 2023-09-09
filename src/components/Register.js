@@ -41,7 +41,7 @@ const Register = ({ setToken, setUser}) => {
     const response = await loginUser(newUser.username, newUser.password);
     setToken(response.token);
     setUser(response.user);
-    localStorage.setItem("userToken", response.token);
+    localStorage.setItem("nightmareHarvesterToken", response.token);
     
     //reset form state after sumbission
     setUsername('');

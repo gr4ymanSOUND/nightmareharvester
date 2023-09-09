@@ -19,6 +19,10 @@ const Login = ({ setToken, setUser, setIsLoginOpen, setIsNavOpen}) => {
 
       // call API to attempt to log in
       const response = await loginUser(username, password);
+      if (!response) {
+        alert('Your username or password was incorrect. Please try again');
+        return;
+      }
       setToken(response.token);
       setUser(response.user);
       localStorage.setItem("nightmareHarvesterToken", response.token);
