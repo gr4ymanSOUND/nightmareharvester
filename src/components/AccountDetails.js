@@ -54,16 +54,18 @@ const AccountDetails = ({ token, user, setUser}) => {
   // this will contain the axios call for deleting the current user. it should just deactivate their account
   const deleteAccount = (e) => {
     e.preventDefault();
-    if (confirm(`Are you sure you want to delete your account? `)) {
+    if (confirm(`Are you sure you want to delete your account? THIS IS CURRENTLY DISABLED`)) {
       // const result = await removeUser(token, user.id);
       alert(`Your account has been deleted. To recover the account later, you can register again with the same username and email address.`);
     }
 
+    window.scrollTo(0,0);
     navigate('/', {replace: true});
   }
 
   const goToAdmin = (e) => {
     e.preventDefault();
+    window.scrollTo(0,0);
     navigate('/admin', {replace: true});
   }
 
