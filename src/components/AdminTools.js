@@ -12,18 +12,6 @@ const AdminTools = ({token, user}) => {
 
   const [ whichTool, setWhichTool ] = useState('user-tool');
 
-  const [ userList, setUserList ] = useState([]);
-
-  useEffect(() => {
-    const getUserList = async () => {
-      const users = await getAllUsers(token);
-      setUserList(users);
-    }
-    if (token) {
-      getUserList();
-    }
-  },[]);
-
   const setTool = (e) => {
     e.preventDefault();
     setWhichTool(e.target.id);
@@ -48,7 +36,7 @@ const AdminTools = ({token, user}) => {
       </div>
       <article className='admin-article'>
         {
-          (whichTool === 'user-tool') ? <UserTool token={token} userList={userList} setUserList={setUserList}/> : <VideoTool token={token}/>
+          (whichTool === 'user-tool') ? <UserTool token={token}/> : <VideoTool token={token}/>
         }
       </article>
     </div>

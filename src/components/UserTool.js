@@ -3,22 +3,27 @@ import React, { useState, useEffect } from 'react';
 // axios imports will go here
 import { getAllUsers, editUser } from '../axios-services';
 
-
-const UserTool = ({token, userList, setUserList}) => {
+const UserTool = ({token}) => {
 
   const [ formOpen, setFormOpen ] = useState(false);
 
-  // used purely for display in the editing form
+  const [ userList, setUserList ] = useState([]);
   const [ selectedUser, setSelectedUser ] = useState({});
-
-  const [allowEmail, setAllowEmail] = useState(false);
-  const [isEmailChecked, setIsEmailChecked] = useState(false);
-
+  const [ allowEmail, setAllowEmail ] = useState(false);
   const [ isAdmin , setIsAdmin ] = useState(false);
-  const [isAdminChecked, setIsAdminChecked] = useState(false);
-
+  const [ isEmailChecked, setIsEmailChecked ] = useState(false);
+  const [ isAdminChecked, setIsAdminChecked ] = useState(false);
   const [ userStatus, setUserStatus ] = useState('');
 
+  useEffect(() => {
+    const getUserList = async () => {
+      const users = await getAllUsers(token);
+      setUserList(users);
+    }
+    if (token) {
+      getUserList();
+    }
+  },[]);
 
   const openForm = (e) => {
     e.preventDefault();
@@ -29,7 +34,6 @@ const UserTool = ({token, userList, setUserList}) => {
     setSelectedUser(editingUser);
 
     const emailBool = editingUser.allow_email ? true : false;
-    console.log('emailBool', emailBool);
     setAllowEmail(emailBool);
     setIsEmailChecked(emailBool)
 
@@ -65,7 +69,6 @@ const UserTool = ({token, userList, setUserList}) => {
       is_admin: isAdmin,
       status: userStatus
     }
-    console.log('updating user from admin', newUser);
 
     const response = await editUser(token, selectedUser.id, newUser)
     alert(`${selectedUser.username}'s account has been edited.`);
@@ -77,9 +80,6 @@ const UserTool = ({token, userList, setUserList}) => {
     setUserList(users);
 
   }
-
-  console.log('userList', userList);
-  console.log('selectedUser', selectedUser);
 
   return (
     <div className='admin-tool'>
