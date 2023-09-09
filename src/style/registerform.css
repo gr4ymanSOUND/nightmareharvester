@@ -73,7 +73,7 @@
 }
 
 .register-button {
-  margin: 1.5rem auto;
+  margin: 1rem .5rem;
   padding: 1.25rem 1.5rem;
   background-color: rgb(54,1,1);
   color: rgb(187,136,136);
@@ -86,6 +86,12 @@
   background-color: rgb(187,136,136);
 }
 
+.form-submission-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 @media screen and (max-width: 600px) {
   .register-form {

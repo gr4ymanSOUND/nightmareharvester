@@ -42,16 +42,6 @@ const Register = ({ setToken, setUser}) => {
     setToken(response.token);
     setUser(response.user);
     localStorage.setItem("userToken", response.token);
-
-    // We are curerntly only allowing adding users, at least on this route
-    // keeping the code commented out for eventual use in the userInfo component
-
-    // if (formType == 'edit-user') {
-    //   delete newUser.password;
-    //   const userId = currentSelected.id;
-    //   const response = await editUser(token, userId, newUser)
-    //   alert(`${newUser.username} has been edited.`);
-    // }
     
     //reset form state after sumbission
     setUsername('');
@@ -134,7 +124,9 @@ const Register = ({ setToken, setUser}) => {
             <option value="inactive">Inactive</option>
           </select>
         </div> */}
-        <button className="register-button" type='submit'>Create Your Account</button>
+        <div className='form-submission-container'>
+          <button className="register-button" type='submit'>Create Your Account</button>
+        </div>
       </form>
     </div>
   )

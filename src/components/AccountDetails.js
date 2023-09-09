@@ -126,8 +126,10 @@ const AccountDetails = ({ token, user, setUser}) => {
             onChange={handleEmailChange}
           />
         </div>
-        <button className="register-button" type='submit'>Save and Submit Changes</button>
-      <button className="register-button" onClick={deleteAccount}>Delete Account</button>
+        <div className='form-submission-container'>
+          <button className="register-button" type='submit'>Save and Submit Changes</button>
+          <button className="register-button" onClick={deleteAccount}>Delete Account</button>
+        </div>
       </form>
     </div>
   )
