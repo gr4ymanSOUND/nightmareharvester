@@ -81,6 +81,22 @@ const UserTool = ({token}) => {
 
   }
 
+  const copyEmailAddresses = async () => {
+    let text = '';
+    const setText = (user) => {
+      if (user.allow_email) {
+        text += user.email + ';'
+      }
+    }
+    userList.forEach(setText);
+    text = text.slice(0, -1);
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+
   return (
     <div className='admin-tool'>
       {
@@ -138,7 +154,8 @@ const UserTool = ({token}) => {
           <div>Notifications</div>
           <div>Status</div>
           <div>Admin</div>
-          <button className='hidden-button'></button>
+          {/*  alt button that's totally hidden from view, used for spacing in the header columns <button className='hidden-button'></button> */}
+          <button className='tool-top-button' onClick={copyEmailAddresses}>Copy Emails</button>
         </div>
         {
           userList.map((user, index) => {

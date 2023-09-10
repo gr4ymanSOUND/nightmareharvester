@@ -87,16 +87,17 @@
   background-color: rgba(255, 255, 255, 0);
 }
 
-/* special style for the add-video button on the top of the video tool */
-.list-columns > .add-video {
+/* special style for the add-video and copy emails buttons on the top of the tools */
+.list-columns > .tool-top-button {
   width: 3rem;
+  max-width: 3rem;
   border: none;
   align-self: stretch;
   background-color: rgb(54,1,1);
   color: rgb(187,136,136);
 }
 
-.list-columns > .add-video:hover {
+.list-columns > .tool-top-button:hover {
   color: rgb(54,1,1);
   background-color: rgb(187,136,136);
 }

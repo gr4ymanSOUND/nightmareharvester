@@ -119,14 +119,14 @@ export async function createNewVideo(token, newVideoInfo) {
     const payload = {
       newVideoInfo: newVideoInfo
     }
-    const { data } = await axios.post(`/api/users/create`, payload, auth);
+    const { data } = await axios.post(`/api/videos/create`, payload, auth);
     return data;
   } catch (error) {
     console.error(error)
   }
 }
 
-export async function updateVideo(token, videoInfo) {
+export async function updateVideo(token, videoId, videoInfo) {
   try {
     const auth = {
       headers: {
@@ -136,7 +136,7 @@ export async function updateVideo(token, videoInfo) {
     const payload = {
       videoInfo: videoInfo
     }
-    const { data } = await axios.post(`/api/users/create`, payload, auth);
+    const { data } = await axios.patch(`/api/videos/${videoId}`, payload, auth);
     return data;
   } catch (error) {
     console.error(error)
