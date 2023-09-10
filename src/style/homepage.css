@@ -32,15 +32,13 @@ article {
 
 }
 
-article h2 {
-  text-align: center;
-}
-
 .article-heading {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
+  font-family: 'Cinzel', Times, serif;
 }
 
 .emoji {
