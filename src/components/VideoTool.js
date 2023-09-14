@@ -102,7 +102,7 @@ const VideoTool = ({token}) => {
                 />
               </div>
               <div className="input-section">
-                <label className="input-label">URL</label>
+                <label className="input-label">**URL</label>
                 <input
                   type="text"
                   value={videoUrl}
@@ -110,6 +110,9 @@ const VideoTool = ({token}) => {
                   id="videoUrl"
                   placeholder="https://www.youtube.com/embed/....."
                 />
+              </div>
+              <div style={{fontSize: ".65rem"}}>
+                ** for the URL, click "Share" on the youtube video, choose the "Embed" option, and then copy only the part inside the quotes next to "src="
               </div>
               <div className='form-submission-container'>
                 <button className="register-button" type='submit'>Save and Submit Changes</button>
