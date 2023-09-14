@@ -28,6 +28,7 @@ header {
 }
 
 .logo-container {
+  width: 16rem;
   margin-right: auto;
 
   display: flex;
@@ -110,7 +111,6 @@ header {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  min-width: fit-content;
   height: 100%;
   padding: 0 10px;
 
@@ -144,16 +144,31 @@ header {
   }
 
   .navbar a {
-    min-width: 12rem;
+    min-width: 16rem;
     text-align: left;
   }
 
   .user-button {
-    min-width: 12rem;
+    width: 16rem;
   }
 
   .icon {
     display: block;
+  }
+
+  .header-user {
+    min-width: 16rem;
+    border-bottom: none;
+    border-top: 3px rgb(54,1,1) solid;
+  }
+
+  .header-user div {
+    height: 2.5rem;
+    /* hack to center vertically */
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
   }
   
 }

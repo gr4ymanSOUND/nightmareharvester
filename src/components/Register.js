@@ -65,41 +65,43 @@ const Register = ({ setToken, setUser}) => {
   return (
     <div className='content-container'>
       <form className='register-form' onSubmit={submitHandler}>
-      <div className='register-header'>
-        <h2>Enter Your Details to Create an Account</h2>
-      </div>
-        <div className="input-section">
-          <label className="input-label">Username</label>
-          <input
-            type="text"
-            value={username}
-            onChange={({ target: { value } }) => setUsername(value)}
-            className="form-control"
-            id="username"
-            placeholder="user2023"
-          />
+        <div className='register-header'>
+          <h2>Enter Your Details to Create an Account</h2>
         </div>
-        <div className="input-section">
-          <label className="input-label">Password</label>
-          <input
-            type="password"
-            value={userPassword}
-            onChange={({ target: { value } }) => setUserPassword(value)}
-            className="form-control"
-            id="password"
-            placeholder="******"
-          />
-        </div>
-        <div className="input-section">
-          <label className="input-label">Email</label>
-          <input
-            type="text"
-            value={userEmail}
-            onChange={({ target: { value } }) => setUserEmail(value)}
-            className="form-control"
-            id="userEmail"
-            placeholder="user2023@website.com"
-          />
+        <div className='form-text-fields'>
+          <div className="input-section vertical">
+            <label className="input-label">Username</label>
+            <input
+              type="text"
+              value={username}
+              onChange={({ target: { value } }) => setUsername(value)}
+              className="form-control"
+              id="username"
+              placeholder="user2023"
+            />
+          </div>
+          <div className="input-section vertical">
+            <label className="input-label">Password</label>
+            <input
+              type="password"
+              value={userPassword}
+              onChange={({ target: { value } }) => setUserPassword(value)}
+              className="form-control"
+              id="password"
+              placeholder="******"
+            />
+          </div>
+          <div className="input-section vertical">
+            <label className="input-label">Email</label>
+            <input
+              type="text"
+              value={userEmail}
+              onChange={({ target: { value } }) => setUserEmail(value)}
+              className="form-control"
+              id="userEmail"
+              placeholder="user2023@website.com"
+            />
+          </div>
         </div>
         <div className='input-section other'>
           <label className='input-label'>Allow Email Notifications?</label>
@@ -112,18 +114,6 @@ const Register = ({ setToken, setUser}) => {
             onChange={handleEmailChange}
           />
         </div>
-        {/* <div className="input-section other">
-          <label className="input-label">Status</label>
-          <select
-            id="userStatus"
-            name="userStatus"
-            value={userStatus}
-            onChange={({ target: { value } }) => setUserStatus(value)}
-          >
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-          </select>
-        </div> */}
         <div className='form-submission-container'>
           <button className="register-button" type='submit'>Create Your Account</button>
         </div>

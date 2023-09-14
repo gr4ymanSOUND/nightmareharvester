@@ -80,40 +80,42 @@ const AccountDetails = ({ token, user, setUser}) => {
           }
         </div>
         <div className="input-section">
-          <h3>Edit Your Account: </h3>
-        </div>
-        <div className="input-section">
-          <label className="input-label">Old Password</label>
-          <input
-            type="password"
-            value={oldPassword}
-            onChange={({ target: { value } }) => setOldPassword(value)}
-            className="form-control"
-            id="old-password"
-            placeholder="******"
-          />
-        </div>
-        <div className="input-section">
-          <label className="input-label">New Password</label>
-          <input
-            type="password"
-            value={newPassword}
-            onChange={({ target: { value } }) => setNewPassword(value)}
-            className="form-control"
-            id="new-password"
-            placeholder="******"
-          />
-        </div>
-        <div className="input-section">
-          <label className="input-label">Email</label>
-          <input
-            type="text"
-            value={userEmail}
-            onChange={({ target: { value } }) => setUserEmail(value)}
-            className="form-control"
-            id="userEmail"
-            placeholder="user2023@website.com"
-          />
+            <h3>Edit Your Account: </h3>
+          </div>
+        <div className='form-text-fields'>
+          <div className="input-section vertical">
+            <label className="input-label">Old Password</label>
+            <input
+              type="password"
+              value={oldPassword}
+              onChange={({ target: { value } }) => setOldPassword(value)}
+              className="form-control"
+              id="old-password"
+              placeholder="******"
+            />
+          </div>
+          <div className="input-section vertical">
+            <label className="input-label">New Password</label>
+            <input
+              type="password"
+              value={newPassword}
+              onChange={({ target: { value } }) => setNewPassword(value)}
+              className="form-control"
+              id="new-password"
+              placeholder="******"
+            />
+          </div>
+          <div className="input-section vertical">
+            <label className="input-label">Email</label>
+            <input
+              type="text"
+              value={userEmail}
+              onChange={({ target: { value } }) => setUserEmail(value)}
+              className="form-control"
+              id="userEmail"
+              placeholder="user2023@website.com"
+            />
+          </div>
         </div>
         <div className='input-section other'>
           <label className='input-label'>Allow Email Notifications?</label>
