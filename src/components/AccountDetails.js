@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { editUser, removeUser, loginUser } from '../axios-services';
 
-const AccountDetails = ({ token, user, setUser}) => {
+const AccountDetails = ({ token, setToken, user, setUser}) => {
 
   const navigate = useNavigate();
 
@@ -52,12 +52,19 @@ const AccountDetails = ({ token, user, setUser}) => {
   }
 
   // this will contain the axios call for deleting the current user. it should just deactivate their account
-  const deleteAccount = (e) => {
+  const deleteAccount = async (e) => {
     e.preventDefault();
-    if (confirm(`Are you sure you want to delete your account? THIS IS CURRENTLY DISABLED`)) {
-      // const result = await removeUser(token, user.id);
+    if (confirm(`Are you sure you want to delete your account?`)) {
+      try {
+        const result = await removeUser(token, user.id);
       alert(`Your account has been deleted. To recover the account later, you can register again with the same username and email address.`);
+      } catch (error) {
+        alert('problem deleting account')
+      }
     }
+
+    setToken(null);
+    localStorage.removeItem('nightmareHarvesterToken');
 
     window.scrollTo(0,0);
     navigate('/', {replace: true});
@@ -80,8 +87,8 @@ const AccountDetails = ({ token, user, setUser}) => {
           }
         </div>
         <div className="input-section">
-            <h3>Edit Your Account: </h3>
-          </div>
+          <h3>Edit Your Account: </h3>
+        </div>
         <div className='form-text-fields'>
           <div className="input-section vertical">
             <label className="input-label">Old Password</label>

@@ -71,8 +71,6 @@ const VideoTool = ({token}) => {
     setVideoList(videos);
   }
 
-  // console.log('videoList', videoList);
-
   return (
     <div className='admin-tool'>
       {

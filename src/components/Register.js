@@ -32,11 +32,8 @@ const Register = ({ setToken, setUser}) => {
       status: userStatus
     }
 
-    console.log('user to create', newUser)
-
     // first create the user, then actually log them in right after
     const createdUser = await createUser(newUser);
-    console.log('createdUser after register', createdUser)
 
     const response = await loginUser(newUser.username, newUser.password);
     setToken(response.token);

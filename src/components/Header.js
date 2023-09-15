@@ -30,7 +30,6 @@ const Header = ({ user, setUser, setToken }) => {
   const logOut = (e) => {
     e.preventDefault();
     setToken(null);
-    setUser({});
     localStorage.removeItem('nightmareHarvesterToken');
   }
 

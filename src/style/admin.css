@@ -177,3 +177,11 @@
   margin: .5rem;
 }
 
+.tool-form-container .checkbox {
+  margin-right: -25%;
+}
+
+.tool-form-container .input-section.other {
+  margin: 0;
+}
+

@@ -21,13 +21,21 @@ const App = () => {
   const [ user, setUser ] = useState({});
 
   useEffect(() => {
-    const getUserInfo = async () => {
-      const userInfo = await getMe(token);
-      setUser(userInfo);
+    try {
+      const getUserInfo = async () => {
+        const userInfo = await getMe(token);
+        setUser(userInfo);
+      }
+      if (token) {
+        getUserInfo();
+      } else {
+        setUser({});
+      }
+    } catch (error) {
+      alert('error getting user info');
+      throw error;
     }
-    if (token) {
-      getUserInfo();
-    }
+    
   }, [token]);
 
   //contains the routes for each main page
@@ -76,7 +84,7 @@ const App = () => {
                     exact path="/account"
                     element={
                       Object.keys(user).length == 0 ? <Navigate to="/" replace /> :
-                      <AccountDetails token={token} user={user} setUser={setUser}/>
+                      <AccountDetails token={token} setToken={setToken} user={user} setUser={setUser}/>
                     }
                   />
               </Routes>

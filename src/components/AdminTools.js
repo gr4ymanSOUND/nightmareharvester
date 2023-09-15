@@ -17,9 +17,6 @@ const AdminTools = ({token, user}) => {
     setWhichTool(e.target.id);
   }
 
-  console.log('which tool?', whichTool);
-
-
   return (
     <div className='content-container'>
       <div className='admin-buttons'>
