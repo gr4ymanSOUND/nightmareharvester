@@ -101,7 +101,7 @@ const UserTool = ({token}) => {
     <div className='admin-tool'>
       {
         formOpen ? (
-          <div className='tool-form-container'>
+          <div className='tool-form-container user'>
             <form className='register-form' onSubmit={submitHandler}>
               <div className="input-section tool-heading">
                 <h3>Edit This Account: {selectedUser.username}</h3>
