@@ -42,7 +42,14 @@
 
 .input-section input:focus {
   outline: none;
-  border-right: red 3px solid;
+  border-right: 5px solid red;
+  animation: focusanimate 5s infinite;
+}
+
+@keyframes focusanimate {
+  50% {
+    border-right: 5px solid rgba(255, 116, 116, 0.573);
+  }
 }
 
 .login-register-buttons {
