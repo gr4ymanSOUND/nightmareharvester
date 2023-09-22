@@ -36,6 +36,13 @@
   padding: .5rem;
   width: 90%;
   min-width: 150px;
+  border: none;
+  border-radius: 3px;
+}
+
+.input-section input:focus {
+  outline: none;
+  border-right: red 3px solid;
 }
 
 .login-register-buttons {

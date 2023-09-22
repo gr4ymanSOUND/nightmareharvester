@@ -7,13 +7,13 @@ const HomePage = () => {
     <div className="content-container home">
 
       <div className="article-heading" style={{width: "90%"}}>
-          <h1>
-            Welcome to the Twisted Realm of...
-          </h1>
-        </div>
-        <div className='home-logo-container'>
-          <img src={require('../img/nightmareLogo2.jpeg')}></img>
-        </div>
+        <h1>
+          Welcome to the Twisted Realm of...
+        </h1>
+      </div>
+      <div className='home-logo-container'>
+        <img src={require('../img/nightmareLogo2.jpeg')}></img>
+      </div>
       <article>
         <div className="article-heading">
           <div className="emoji">📚</div>

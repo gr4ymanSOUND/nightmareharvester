@@ -62,7 +62,6 @@
 .input-section.vertical input {
   width: 100%;
   border: none;
-  border-radius: 3px;
   padding-top: 1rem;
 }
 
@@ -88,6 +87,18 @@
 .register-form input {
   width: 70%;
   max-width: none;
+  border: none;
+  border-radius: 3px;
+}
+
+.register-form input:focus {
+  outline: none;
+  border-right: red 3px solid;
+}
+
+.input-section textarea:focus {
+  outline: none;
+  border-right: red 3px solid;
 }
 
 .other select {
@@ -106,7 +117,6 @@
 
 .checkbox {
   margin-left: -25%;
-  /* margin-right: -25%; */
   flex: 1;
   width: 30px;
   height: 30px;

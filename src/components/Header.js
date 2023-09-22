@@ -45,7 +45,6 @@ const Header = ({ user, setUser, setToken }) => {
   return (
     <header>
       <nav className="navbar" id="navcontainer">
-        {/* <img id="logo" src={} alt="Logo" /> */}
         <div className="logo-container">
           <NavLink 
             to="/"
@@ -54,19 +53,32 @@ const Header = ({ user, setUser, setToken }) => {
         </div>
         <div className={`other-nav ${isNavOpen ? "open" : ""}`}>
           <NavLink
-            to="/Videos"
+            to="/videos"
             onClick={navLinkClick}
             className={({isActive}) => {
               return isActive ? 'active-link' : ''
             }}
-          >Videos</NavLink>
+          >Videos
+          </NavLink>
+
           <NavLink
-            to="/About"
+            to="/about"
             onClick={navLinkClick}
             className={({isActive}) => {
               return isActive ? 'active-link' : ''
             }}         
-            >About</NavLink>
+          >About
+          </NavLink>
+
+          <NavLink
+            to="/merch"
+            onClick={navLinkClick}
+            className={({isActive}) => {
+              return isActive ? 'active-link' : ''
+            }}         
+          >Merch
+          </NavLink>
+
           { Object.keys(user).length != 0 ? (
             <>
               <div className={'header-user'} onClick={openAccountDetails}>

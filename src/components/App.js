@@ -7,6 +7,7 @@ import Register from './Register';
 import HomePage from './HomePage';
 import Videos from './Videos';
 import About from './About';
+import Merch from './Merch';
 import Footer from './Footer';
 import AccountDetails from './AccountDetails';
 import AdminTools from './AdminTools';
@@ -63,6 +64,12 @@ const App = () => {
                     exact path="/about"
                     element={
                       <About />
+                    } 
+                  />
+                  <Route 
+                    exact path="/merch"
+                    element={
+                      <Merch />
                     } 
                   />
                   <Route 

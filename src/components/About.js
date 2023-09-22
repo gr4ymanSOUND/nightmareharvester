@@ -8,21 +8,7 @@ const About = () => {
       <article>
         <div className="article-heading">
           <h1>
-            Support us by donating!
-          </h1>
-        </div>
-        <div className="article-heading">
-          <h2>
-            --- Coming Soon! ---
-          </h2>
-        </div>
-
-      </article>
-
-      <article>
-        <div className="article-heading">
-          <h1>
-            About the Project
+            The Project
           </h1>
         </div>
         <div className="article-heading">
@@ -40,7 +26,7 @@ const About = () => {
       <article>
         <div className="article-heading">
           <h1>
-            About the People
+            The People
           </h1>
         </div>
         <div className="article-heading">

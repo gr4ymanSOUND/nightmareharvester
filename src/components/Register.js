@@ -63,7 +63,15 @@ const Register = ({ setToken, setUser}) => {
     <div className='content-container'>
       <form className='register-form' onSubmit={submitHandler}>
         <div className='register-header'>
-          <h2>Enter Your Details to Create an Account</h2>
+          <p style={{textAlign: "left"}}>
+            Creating an account on our site gets you early access to our video content, along with the opportunity to sign up for our emailing list to get updates on our project and special offers.
+          </p>
+          <p style={{textAlign: "left"}}>
+            We have a lot more planned for the future, so sign up and get on our email list to be the first to know!
+          </p>
+          <div className="article-heading">
+            <h2>Enter Your Details to Create an Account</h2>
+          </div>
         </div>
         <div className='form-text-fields'>
           <div className="input-section vertical">
