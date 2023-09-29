@@ -84,6 +84,23 @@ export async function editUser(token, userId, newUserData) {
   }
 }
 
+export async function resetUserPassword(token, userId) {
+  try {
+    const auth = {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    };
+    const payload = {
+      basePassword: 'cultFollower24'
+    }
+    const { data } = await axios.patch(`/api/users/reset/${userId}`, payload, auth);
+    return data;
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 export async function removeUser(token, userId) {
   try {
     const auth = {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // axios imports will go here
-import { getAllUsers, editUser } from '../axios-services';
+import { getAllUsers, editUser, resetUserPassword } from '../axios-services';
 
 const UserTool = ({token}) => {
 
@@ -97,6 +97,12 @@ const UserTool = ({token}) => {
     }
   }
 
+  const resetPassword = async () => {
+    // this will contain a call that sets the user's password to a basic phrase so they can log in and reset it on their own if they forgot their password
+    const response = await resetUserPassword(token, selectedUser.id)
+    alert(`${selectedUser.username}'s password has been reset to "cultFollower24".`);
+  }
+
   return (
     <div className='admin-tool'>
       {
@@ -142,6 +148,7 @@ const UserTool = ({token}) => {
                 />
               </div>
               <div className='form-submission-container'>
+                <button className="register-button" type='button' onClick={resetPassword}>Reset Password</button>
                 <button className="register-button" type='submit'>Save and Submit Changes</button>
               </div>
             </form>

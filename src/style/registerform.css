@@ -137,7 +137,7 @@
   color: rgb(187,136,136);
   border: 1px rgba(37, 0, 0, .50) solid;
   border-radius: 3px;
-  box-shadow: 1px 1px 8px -3px rgb(0,0,0, 0.4);
+  box-shadow: 1px 1px 8px -3px rgb(0,0,0, 0.6);
 }
 
 .register-button:hover {

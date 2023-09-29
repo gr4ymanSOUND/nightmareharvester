@@ -57,7 +57,7 @@ const App = () => {
                   <Route 
                     exact path="/videos"
                     element={
-                      <Videos />
+                      <Videos token={token}/>
                     } 
                   />
                   <Route 

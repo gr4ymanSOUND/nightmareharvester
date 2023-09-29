@@ -55,7 +55,8 @@ const VideoTool = ({token}) => {
     const newVideoInfo = {
       title: videoTitle,
       description: videoDescription,
-      video_url: videoUrl
+      video_url: videoUrl,
+      status: videoStatus
     }
 
     if (formOpen == 'add') {
@@ -128,6 +129,7 @@ const VideoTool = ({token}) => {
                 >
                   <option value="public">Public</option>
                   <option value="supporter">Supporter</option>
+                  <option value="pinned">Pinned</option>
                   <option value="hidden">Hidden</option>
                 </select>
               </div>

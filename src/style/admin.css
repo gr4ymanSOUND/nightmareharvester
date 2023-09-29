@@ -37,7 +37,8 @@
   background-color: rgb(54,1,1);
   color: rgb(187,136,136);
   border: 1px rgba(37, 0, 0, .50) solid;
-  border-radius: 3px;  box-shadow: 1px 1px 8px -3px rgb(0,0,0, 0.4);
+  border-radius: 3px;
+  box-shadow: 1px 1px 8px -3px rgb(0,0,0, 0.6);
 }
 
 .admin-buttons button:hover {
@@ -60,7 +61,7 @@
   border: 2px rgb(22,22,22) solid;
   background-color: rgb(22,22,22);
   border-radius: 8px;
-  padding: 2px;
+  padding: 4px 4px 10px 4px;
   margin-top: 1.5rem;
 }
 
@@ -144,7 +145,7 @@
 .tool-form-container {
   z-index: 50;
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
@@ -165,6 +166,7 @@
   border: none;
   background-color: rgb(54,1,1);
   color: rgb(187,136,136);
+  box-shadow: 1px 1px 8px -3px rgb(0,0,0, 0.6);
 }
 
 .tool-heading > button:hover {
