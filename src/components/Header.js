@@ -45,7 +45,7 @@ const Header = ({ user, setUser, setToken }) => {
   return (
     <header>
       <nav className="navbar" id="navcontainer">
-        <div className="logo-container">
+        <div className="home-link">
           <NavLink 
             to="/"
             onClick={navLinkClick}

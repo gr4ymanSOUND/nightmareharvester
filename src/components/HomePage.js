@@ -46,16 +46,16 @@ const HomePage = () => {
 
       <article>
         <div className="article-heading">
-          <h1>
-            Support us by donating!
-          </h1>
-        </div>
-        <div className="article-heading">
           <h2>
-            --- Coming Soon! ---
+            Support us by donating!
           </h2>
         </div>
-
+        <div className="article-heading">
+          <stripe-buy-button
+            buy-button-id="buy_btn_1NtMfxG2r3wfxV4350VIu2sM"
+            publishable-key="pk_test_51Nt2OZG2r3wfxV43qN7tZnXdwMSpoRt7Mq4d8kcXSAlG2AU3MdC0XEJDxVmkFmkUyApjGAkEDaHETA3JJQQ5MYVC00nxESAYTZ"
+          ></stripe-buy-button>
+        </div>
       </article>
 
     </div>

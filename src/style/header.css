@@ -27,7 +27,7 @@ header {
   align-items: center;
 }
 
-.logo-container {
+.home-link {
   width: 16rem;
   margin-right: auto;
 
@@ -37,6 +37,10 @@ header {
   align-items: center;
 
   font-family: 'Cinzel', Times, serif;
+}
+
+.home-link a {
+  width: 100%;
 }
 
 .other-nav {
@@ -54,6 +58,7 @@ header {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  align-self: stretch;
 }
 
 .navbar a:hover {

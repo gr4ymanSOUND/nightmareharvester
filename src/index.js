@@ -12,6 +12,7 @@ import './style/footer.css';
 import './style/loginform.css';
 import './style/registerform.css';
 import './style/admin.css';
+import './style/merch.css';
 
 
 

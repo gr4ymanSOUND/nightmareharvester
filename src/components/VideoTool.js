@@ -9,9 +9,10 @@ const VideoTool = ({token}) => {
   const [ videoList, setVideoList ] = useState([]);
   const [ formOpen, setFormOpen ] = useState('closed');
   const [ selectedVideoId, setSelectedVideoId ] = useState(0);
-  const [ videoTitle, setVideoTitle ] = useState('')
-  const [ videoDescription, setVideoDescription ] = useState('')
-  const [ videoUrl, setVideoUrl ] = useState('')
+  const [ videoTitle, setVideoTitle ] = useState('');
+  const [ videoDescription, setVideoDescription ] = useState('');
+  const [ videoUrl, setVideoUrl ] = useState('');
+  const [ videoStatus, setVideoStatus ] = useState('hidden');
 
   useEffect(() => {
     const getVideoList = async () => {
@@ -32,6 +33,9 @@ const VideoTool = ({token}) => {
       setVideoTitle(video.title);
       setVideoDescription(video.description);
       setVideoUrl(video.video_url);
+      // videos in the current database don't have a status
+      // will update this after testing the new database build with the status column in place
+      setVideoStatus(video.status ? video.status : 'hidden');
       setFormOpen('edit');
     }
   }
@@ -41,6 +45,7 @@ const VideoTool = ({token}) => {
     setVideoTitle('');
     setVideoDescription('');
     setVideoUrl('');
+    setVideoStatus('hidden')
     setFormOpen('closed');
   }
 
@@ -65,6 +70,7 @@ const VideoTool = ({token}) => {
     setVideoTitle('');
     setVideoDescription('');
     setVideoUrl('');
+    setVideoStatus('hidden');
     setFormOpen('closed');
 
     const videos = await getAllVideos();
@@ -112,6 +118,19 @@ const VideoTool = ({token}) => {
               <div style={{fontSize: ".65rem"}}>
                 ** for the URL, click "Share" on the youtube video, choose the "Embed" option, and then copy only the part inside the quotes next to "src="
               </div>
+              <div className="input-section other">
+                <label className="input-label">Status</label>
+                <select 
+                  id="videoStatus"
+                  name="videoStatus"
+                  value={videoStatus}
+                  onChange={({ target: { value } }) => setVideoStatus(value)}
+                >
+                  <option value="public">Public</option>
+                  <option value="supporter">Supporter</option>
+                  <option value="hidden">Hidden</option>
+                </select>
+              </div>
               <div className='form-submission-container'>
                 <button className="register-button" type='submit'>Save and Submit Changes</button>
               </div>
@@ -123,6 +142,7 @@ const VideoTool = ({token}) => {
         <div className='list-columns'>
           <div>Title</div>
           <div>Description</div>
+          <div style={{flex: .5}}>status</div>
           <button className='tool-top-button' onClick={()=>{openForm(0)}}>+</button>
         </div>
         {
@@ -131,6 +151,7 @@ const VideoTool = ({token}) => {
               <div id={video.id} key={video.id} className='list-entry'>
                 <div>{video.title}</div>
                 <div>{video.description}</div>
+                <div style={{flex: .5}}>{video.status}</div>
                 <button onClick={()=>{openForm(video.id)}}>Edit</button>
               </div>
             )

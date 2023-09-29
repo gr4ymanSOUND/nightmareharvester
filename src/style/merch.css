@@ -1,0 +1,24 @@
+.donate-section {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  /* border: 1px red solid; */
+}
+
+.donate-section > p {
+  width: 40%;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  /* border: 1px pink solid; */
+}
+
+@media screen and (max-width: 600px) {
+
+  .donate-section > p {
+    margin-right: .5rem;
+  }
+
+}
