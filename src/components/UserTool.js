@@ -148,8 +148,8 @@ const UserTool = ({token}) => {
                 />
               </div>
               <div className='form-submission-container'>
-                <button className="register-button" type='button' onClick={resetPassword}>Reset Password</button>
-                <button className="register-button" type='submit'>Save and Submit Changes</button>
+                <button className="login-button" type='button' onClick={resetPassword}>Reset Password</button>
+                <button className="login-button" type='submit'>Save and Submit Changes</button>
               </div>
             </form>
           </div>

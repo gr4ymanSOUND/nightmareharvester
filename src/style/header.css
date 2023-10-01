@@ -149,7 +149,7 @@ header {
   }
 
   .navbar a {
-    min-width: 16rem;
+    width: 16rem;
     text-align: left;
   }
 

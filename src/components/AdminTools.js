@@ -19,19 +19,19 @@ const AdminTools = ({token, user}) => {
 
   return (
     <div className='content-container'>
-      <div className='admin-buttons'>
-        <button 
-          id='user-tool' 
-          onClick={setTool} 
-          className={whichTool == 'user-tool' ? 'active-tool' : ''}
-        >Users</button>
-        <button 
-          id='video-tool'
-          onClick={setTool}
-          className={whichTool == 'video-tool' ? 'active-tool' : ''}
-        >Videos</button>
-      </div>
       <article className='admin-article'>
+        <div className='admin-buttons'>
+          <button 
+            id='user-tool' 
+            onClick={setTool} 
+            className={whichTool == 'user-tool' ? 'active-tool' : ''}
+          >Users</button>
+          <button 
+            id='video-tool'
+            onClick={setTool}
+            className={whichTool == 'video-tool' ? 'active-tool' : ''}
+          >Videos</button>
+        </div>
         {
           (whichTool === 'user-tool') ? <UserTool token={token}/> : <VideoTool token={token}/>
         }

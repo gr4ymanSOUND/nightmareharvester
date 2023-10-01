@@ -26,12 +26,15 @@ const Videos = ({token}) => {
       {
         pinnedVid ? (
           <article id={pinnedVid.id} key={pinnedVid.id}>
+            <div className='vid-icon pin'>
+              <i class="fa-solid fa-thumbtack"></i>
+            </div>
             <div className="article-heading">
-              <div className="emoji">🌙🌙</div>
+              <div className="emoji">☾</div>
               <h2>
-                PINNED: {pinnedVid.title}
+                {pinnedVid.title}
               </h2>
-              <div className="emoji">🌙🌙</div>
+              <div className="emoji">☾</div>
             </div>
             <div className="video-embed">
               <iframe className='responsive-iframe' src={pinnedVid.video_url} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
@@ -52,12 +55,16 @@ const Videos = ({token}) => {
           if (video.status == 'public' || (video.status == 'supporter' && token)) {
             return (
               <article id={video.id} key={video.id}>
+                {
+                  video.status == 'supporter' ? <div className='vid-icon'>
+                  <i class="fa-solid fa-user-lock"></i></div> : null
+                }
                 <div className="article-heading">
-                  <div className="emoji">🌙</div>
+                  <div className="emoji">☾</div>
                   <h2>
                     {video.title}
                   </h2>
-                  <div className="emoji">🌙</div>
+                  <div className="emoji">☾</div>
                 </div>
                 <div className="video-embed">
                   <iframe className='responsive-iframe' src={video.video_url} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>

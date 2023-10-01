@@ -134,7 +134,7 @@ const VideoTool = ({token}) => {
                 </select>
               </div>
               <div className='form-submission-container'>
-                <button className="register-button" type='submit'>Save and Submit Changes</button>
+                <button className="login-button" type='submit'>Save and Submit Changes</button>
               </div>
             </form>
           </div>

@@ -17,3 +17,22 @@
   height: 100%;
   border: none;
 }
+
+.vid-icon {
+  position: absolute;
+  margin-left: -1rem;
+  font-size: 1rem;
+}
+
+.pin {
+  rotate: -45deg;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+
+  .vid-icon {
+    margin-left: 0;
+  }
+
+}
