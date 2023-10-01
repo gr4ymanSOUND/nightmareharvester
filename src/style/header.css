@@ -29,6 +29,7 @@ header {
 
 .home-link {
   width: 16rem;
+  height: 100%;
   margin-right: auto;
 
   display: flex;
@@ -37,10 +38,12 @@ header {
   align-items: center;
 
   font-family: 'Cinzel', Times, serif;
+  font-size: 1.1rem;
 }
 
 .home-link a {
   width: 100%;
+  height: 100%;
 }
 
 .other-nav {
@@ -149,12 +152,12 @@ header {
   }
 
   .navbar a {
-    width: 16rem;
+    width: 15rem;
     text-align: left;
   }
 
   .user-button {
-    width: 16rem;
+    width: 15rem;
   }
 
   .icon {
@@ -162,7 +165,7 @@ header {
   }
 
   .header-user {
-    min-width: 16rem;
+    min-width: 15rem;
     border-bottom: none;
     border-top: 3px rgb(54,1,1) solid;
   }
