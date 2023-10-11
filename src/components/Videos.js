@@ -27,7 +27,7 @@ const Videos = ({token}) => {
         pinnedVid ? (
           <article id={pinnedVid.id} key={pinnedVid.id}>
             <div className='vid-icon pin'>
-              <i class="fa-solid fa-thumbtack"></i>
+              <i className="fa-solid fa-thumbtack"></i>
             </div>
             <div className="article-heading">
               <div className="emoji">☾</div>
@@ -57,7 +57,7 @@ const Videos = ({token}) => {
               <article id={video.id} key={video.id}>
                 {
                   video.status == 'supporter' ? <div className='vid-icon'>
-                  <i class="fa-solid fa-user-lock"></i></div> : null
+                  <i className="fa-solid fa-user-lock"></i></div> : null
                 }
                 <div className="article-heading">
                   <div className="emoji">☾</div>

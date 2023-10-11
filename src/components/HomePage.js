@@ -34,27 +34,30 @@ const HomePage = () => {
         <p style={{textAlign: "center", margin: 0}}>
           Yours in shadows,
         </p>
+        
         <div className="article-signature">
-        <div className="emoji">🌙</div>
-          <h1>
-            The Nightmare Harvester 
-          </h1>
           <div className="emoji">🌙</div>
+            <h1>
+              The Nightmare Harvester 
+            </h1>
+          <div className="emoji">🌙</div>
+          <div className='pic-container home'>
+            <img id='homepage-headshot'src={require('../img/HarvesterHeadshot_blur.jpg')}></img>
+          </div>
         </div>
 
       </article>
 
       <article>
-        <div className="article-heading">
-          <h2>
-            Support us by donating!
-          </h2>
-        </div>
-        <div className="article-heading">
+      <div className='donate-section'>
+          <p>
+            Enter whatever amount you are comfortable with and then click "Donate" to help support our videos!
+          </p>
           <stripe-buy-button
             buy-button-id="buy_btn_1NtMfxG2r3wfxV4350VIu2sM"
             publishable-key="pk_test_51Nt2OZG2r3wfxV43qN7tZnXdwMSpoRt7Mq4d8kcXSAlG2AU3MdC0XEJDxVmkFmkUyApjGAkEDaHETA3JJQQ5MYVC00nxESAYTZ"
           ></stripe-buy-button>
+          
         </div>
       </article>
 

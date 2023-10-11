@@ -24,6 +24,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   width: 70%;
+  min-height: 1rem;
   max-width: 500px;
   padding: 1rem;
 
@@ -35,4 +36,17 @@ footer {
 
 .social-media a:hover {
   color: white;
+}
+
+@media screen and (max-width: 650px) {
+
+  .copyright {
+    font-size: .75rem;
+  }
+
+  .social-media {
+    width: 90%;
+  }
+
+
 }

@@ -5,7 +5,7 @@ const Merch = () => {
   return (
     <div className="content-container">
 
-<article>
+      <article>
         <div className="article-heading">
           <h1>
             Merch
@@ -14,11 +14,6 @@ const Merch = () => {
         <h2 style={{textAlign: 'center', marginBottom: '3rem'}}>
           --- Coming Soon! ---
         </h2>
-        {/* <div className="article-heading">
-          <h2>
-            --- Coming Soon! ---
-          </h2>
-        </div> */}
 
       </article>
 

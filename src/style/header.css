@@ -56,12 +56,16 @@ header {
 
 .navbar a {
   min-width: 7rem;
-  display: block;
+  padding: .25rem;
   color: white;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
   align-self: stretch;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar a:hover {
@@ -133,7 +137,7 @@ header {
 
 /* MOBILE */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
 
   .navbar {
     flex-flow: column nowrap;
@@ -153,6 +157,8 @@ header {
 
   .navbar a {
     width: 15rem;
+    min-height: 3rem;
+    padding: .5rem;
     text-align: left;
   }
 

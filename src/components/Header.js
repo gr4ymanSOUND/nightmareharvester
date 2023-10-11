@@ -49,7 +49,8 @@ const Header = ({ user, setUser, setToken }) => {
           <NavLink 
             to="/"
             onClick={navLinkClick}
-          >Nightmare Harvester</NavLink>
+          ><div>Nightmare Harvester</div>
+          </NavLink>
         </div>
         <div className={`other-nav ${isNavOpen ? "open" : ""}`}>
           <NavLink
@@ -58,7 +59,7 @@ const Header = ({ user, setUser, setToken }) => {
             className={({isActive}) => {
               return isActive ? 'active-link' : ''
             }}
-          >Videos
+          ><div>Videos</div>
           </NavLink>
 
           <NavLink
@@ -67,7 +68,7 @@ const Header = ({ user, setUser, setToken }) => {
             className={({isActive}) => {
               return isActive ? 'active-link' : ''
             }}         
-          >About
+          ><div>About</div>
           </NavLink>
 
           <NavLink
@@ -76,7 +77,7 @@ const Header = ({ user, setUser, setToken }) => {
             className={({isActive}) => {
               return isActive ? 'active-link' : ''
             }}         
-          >Merch
+          ><div>Merch</div>
           </NavLink>
 
           { Object.keys(user).length != 0 ? (

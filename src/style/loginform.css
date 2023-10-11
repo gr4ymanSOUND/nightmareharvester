@@ -1,25 +1,29 @@
 /* Login Form */
 
 .login-window {
-  display: block;
+  display: flex;
+  flex-flow: row nowrap;
   position: fixed;
-  top: 3.25rem;
+  top: 3rem;
   right: 0;
+
+  background-color: rgba(22, 22, 22, 1.0);
+  border: 2px rgb(54,1,1) solid;
+  border-radius: 3px;
   box-shadow: 2px 1px 4px 2px rgba(0, 0, 0, 0.4);
 }
 
 .login-form {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 20rem;
   padding: .5rem;
   
-  background-color: rgba(22, 22, 22, 1.0);
+
+
   color: white;
-  border: 2px rgb(54,1,1) solid;
-  border-radius: 3px;
 }
 
 .input-section {
@@ -67,6 +71,7 @@
   border: 1px rgba(37, 0, 0, .50) solid;
   border-radius: 3px;
   box-shadow: 1px 1px 8px -3px rgb(0,0,0, 0.4);
+  flex: 1;
 }
 
 .login-button:hover {
@@ -77,11 +82,12 @@
 /* for the register link */
 .login-register-buttons a {
   font-size: .75rem;
-  padding: 10px;
+  padding: 1rem;
   text-align: center;
 
   /* the "navbar a" style in the header.css interferes here, so I have to add this min-width 0px to keep it from expanding in mobile view */
-  min-width: 0px;
+  /* min-width: 0px; */
+  /* flex: 1; */
 }
 
 .login-register-buttons a:hover {
@@ -89,21 +95,39 @@
   text-decoration: underline;
 }
 
+.closer {
+  display: none;
+}
 
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 650px) {
   .login-window {
     top: 0;
     left: 0;
+    width: 100%;
+    height: 35%;
   }
 
   .login-form {
-    width: 90vw;
-    min-height: 11rem;
+    width: 85%;
+  }
 
+  input {
+    height: 2.5rem;
   }
 
   .login-register-buttons {
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
+  }
+
+  .login-button {
+    padding: 1rem 4rem;
+  }
+
+  .closer {
+    display: block;
+    padding: 0;
+    height: 30%;
   }
 
 }

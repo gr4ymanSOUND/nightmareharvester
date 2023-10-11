@@ -34,6 +34,11 @@ const Login = ({ setToken, setUser, setIsLoginOpen, setIsNavOpen}) => {
       setIsNavOpen(false);
     }
 
+    const openLogin = (e) => {
+      e.preventDefault();
+      setIsLoginOpen(false);
+    }
+
 
   return (
     <div className='login-window'>
@@ -68,6 +73,7 @@ const Login = ({ setToken, setUser, setIsLoginOpen, setIsNavOpen}) => {
               }}>New? Register Here</Link>
           </div>
       </form>
+      <button type='button' className="login-button closer" onClick={openLogin}>X</button>
     </div>
   )
 }

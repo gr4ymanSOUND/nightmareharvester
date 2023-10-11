@@ -142,12 +142,11 @@
 .tool-form-container {
   z-index: 50;
   position: absolute;
-  top: 50%;
+  top: 15rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -15rem);
   width: 80%;
   max-width: 600px;
-  /* border: 1px red solid; */
 }
 
 .tool-form-container.user {
@@ -188,7 +187,7 @@
   margin: 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
 
   .tool-form-container {
     width: 85%;

@@ -15,7 +15,7 @@
   /* border: 1px pink solid; */
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
 
   .donate-section {
     flex-flow: column nowrap;

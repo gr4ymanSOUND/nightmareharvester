@@ -160,7 +160,7 @@
   width: 80%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .register-form {
     width: 98%;
     padding: .5rem .5rem;
