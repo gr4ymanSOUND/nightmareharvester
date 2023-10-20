@@ -15,7 +15,7 @@ footer {
   padding: .5rem 2rem;
   font-size: 1rem;
 
-  border-top: 1px rgb(187,136,136) solid;
+  /* border-top: 1px rgb(187,136,136) solid; */
 }
 
 .social-media {
@@ -28,6 +28,7 @@ footer {
   max-width: 500px;
   padding: 1rem;
 
+  border-bottom: 1px rgb(187,136,136) solid;
 }
 
 .social-media a {

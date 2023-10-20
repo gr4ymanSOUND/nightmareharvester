@@ -105,7 +105,7 @@ h1 {
 }
 
 .pic-container.project {
-  min-width: 350px;
+  min-width: 300px;
   max-width: 400px;
   padding: 1rem;
   flex: 1;
@@ -189,6 +189,13 @@ p {
   text-align: justify;
   font-size: 1.2rem;
 }
+
+#homepage-headshot {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+
 
 .pic-container.project {
   max-width: none;

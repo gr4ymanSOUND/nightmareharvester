@@ -18,6 +18,7 @@ const Header = ({ user, setUser, setToken }) => {
   const openLogin = (e) => {
     e.preventDefault();
     setIsLoginOpen(isLoginOpen => !isLoginOpen);
+    setIsNavOpen(isNavOpen => !isNavOpen);
   }
 
   const openAccountDetails = (e) => {
@@ -31,6 +32,7 @@ const Header = ({ user, setUser, setToken }) => {
     e.preventDefault();
     setToken(null);
     localStorage.removeItem('nightmareHarvesterToken');
+    setIsNavOpen(false);
   }
 
   const navLinkClick = () => {
