@@ -23,9 +23,10 @@ const Merch = () => {
             Want to support us without also supporting your hoarding habit? Enter whatever amount you are comfortable with and then click "Donate"!
           </p>
           <stripe-buy-button
-            buy-button-id="buy_btn_1NtMfxG2r3wfxV4350VIu2sM"
-            publishable-key="pk_test_51Nt2OZG2r3wfxV43qN7tZnXdwMSpoRt7Mq4d8kcXSAlG2AU3MdC0XEJDxVmkFmkUyApjGAkEDaHETA3JJQQ5MYVC00nxESAYTZ"
-          ></stripe-buy-button>
+            buy-button-id="buy_btn_1O4Y7yAjds8MtnyF8cBRlRck"
+            publishable-key="pk_live_51NteRJAjds8MtnyF1teschh3jPQ4IMXkARnCQS0b0dfRYdhskqEOTcgtOiNeZf44ieIFWL03mqP0PtWS1nPF6Smn00PGxsNsqZ"
+          >
+          </stripe-buy-button>
           
         </div>
       </article>
