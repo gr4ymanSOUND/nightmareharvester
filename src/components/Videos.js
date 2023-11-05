@@ -21,9 +21,36 @@ const Videos = ({token}) => {
   }, [token]);
 
 
+  // <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/881452979?h=9354605bb5&title=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+
   return (
     <div className="content-container">
+      {/* Vimeo version */}
       {
+        pinnedVid ? (
+          <article id={pinnedVid.id} key={pinnedVid.id}>
+            <div className='vid-icon pin'>
+              <i className="fa-solid fa-thumbtack"></i>
+            </div>
+            <div className="article-heading">
+              <div className="emoji">☾</div>
+              <h2>
+                {pinnedVid.title}
+              </h2>
+              <div className="emoji">☾</div>
+            </div>
+            <div className="video-embed">
+              <iframe src={pinnedVid.video_url} className='responsive-iframe' frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p>
+              {pinnedVid.description}
+            </p>
+          </article>
+        ) : null
+      }
+      {/* YouTube version */}
+      {/* {
         pinnedVid ? (
           <article id={pinnedVid.id} key={pinnedVid.id}>
             <div className='vid-icon pin'>
@@ -44,10 +71,41 @@ const Videos = ({token}) => {
             </p>
           </article>
         ) : null
-      }
+      } */}
       
 
       {
+        videoList.map((video, index) => {
+          if (video.status == 'hidden') {
+            return;
+          }
+          if (video.status == 'public' || (video.status == 'supporter' && token)) {
+            return (
+              <article id={video.id} key={video.id}>
+                {
+                  video.status == 'supporter' ? <div className='vid-icon'>
+                  <i className="fa-solid fa-user-lock"></i></div> : null
+                }
+                <div className="article-heading">
+                  <div className="emoji">☾</div>
+                  <h2>
+                    {video.title}
+                  </h2>
+                  <div className="emoji">☾</div>
+                </div>
+                <div className="video-embed">
+                <iframe src={video.video_url} className='responsive-iframe' frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p>
+                  {video.description}
+                </p>
+              </article>
+            )
+          }
+        })
+      }
+      {/* YouTube version */}
+      {/* {
         videoList.map((video, index) => {
           if (video.status == 'hidden') {
             return;
@@ -76,7 +134,8 @@ const Videos = ({token}) => {
             )
           }
         })
-      }
+      } */}
+    <script src="https://player.vimeo.com/api/player.js"></script>
     </div>
   )
 

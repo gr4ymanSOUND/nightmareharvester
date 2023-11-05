@@ -117,8 +117,9 @@ const VideoTool = ({token}) => {
                 />
               </div>
               <div style={{fontSize: ".65rem"}}>
-                ** for the URL, click "Share" on the youtube video, choose the "Embed" option, and then copy only the part inside the quotes next to "src="
+                ** for the URL, click "Share" on the video, choose the "Embed" option, and then copy only the part inside the quotes next to "src="
               </div>
+              <img style={{width: '80%'}}src={require('../img/embedLink.png')}></img>
               <div className="input-section other">
                 <label className="input-label">Status</label>
                 <select 
