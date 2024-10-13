@@ -12,7 +12,7 @@ const Header = ({ user, setUser, setToken }) => {
 
   const openNav = (e) => {
     e.preventDefault();
-    setIsNavOpen(isNavOpen => !isNavOpen);
+    if (!isLoginOpen) setIsNavOpen(isNavOpen => !isNavOpen)
   }
 
   const openLogin = (e) => {
@@ -99,10 +99,11 @@ const Header = ({ user, setUser, setToken }) => {
         {
           isLoginOpen ? <Login setToken={setToken} setUser={setUser} setIsLoginOpen={setIsLoginOpen} setIsNavOpen={setIsNavOpen}/> : null
         }
-      </nav>
         <div className="icon" onClick={openNav}>
           <i className="fa fa-bars"></i>
         </div>
+      </nav>
+        
     </header>
   )
 

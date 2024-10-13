@@ -102,7 +102,6 @@
 
 @media screen and (max-width: 650px) {
   .login-window {
-    top: 0;
     left: 0;
     width: 100%;
   }
@@ -125,8 +124,13 @@
 
   .closer {
     display: block;
+    position: absolute;
+    top: 0;
+    right: -3px;
     padding: 0;
-    height: 3.5rem;
+    height: 3rem;
+    width: 3rem;
+    z-index: 500;
   }
 
 }

@@ -46,6 +46,8 @@ article {
   align-items: center;
   text-align: center;
   font-family: 'Cinzel', Times, serif;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  z-index: 500;
 }
 
 .article-signature {
@@ -80,7 +82,8 @@ h1 {
 
 .home-logo-container {
   width: 90%;
-  max-width: 1080px;
+  max-width: 900px;
+  margin-top: -2.5rem;
 }
 
 .home-logo-container img {

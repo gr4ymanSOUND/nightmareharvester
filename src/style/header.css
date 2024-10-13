@@ -82,13 +82,13 @@ header {
 
 .icon {
   display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
   padding: 1rem;
-  margin: 0;
-  margin-left: auto;
-  align-self: flex-start;
+  height: 3rem;
   color: rgb(187,136,136);
   background-color: rgb(54,1,1);
-
 }
 
 .icon:hover {
@@ -129,6 +129,7 @@ header {
   color: white;
   font-size: .75rem;
   border-bottom: 3px rgb(54,1,1) solid;
+  border-left: 3px rgb(54,1,1) solid;
 }
 
 .header-user:hover {
@@ -153,17 +154,22 @@ header {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
+    overflow: visible;
   }
 
   .navbar a {
-    width: 15rem;
+    /* width: 15rem; */
+    width: 100%;
     min-height: 3rem;
     padding: .5rem;
     text-align: left;
+    align-self: flex-end;
   }
 
   .user-button {
-    width: 15rem;
+    /* width: 15rem; */
+    width: 100%;
+    align-self: flex-end;
   }
 
   .icon {
@@ -174,6 +180,7 @@ header {
     min-width: 15rem;
     border-bottom: none;
     border-top: 3px rgb(54,1,1) solid;
+    align-self: flex-end;
   }
 
   .header-user div {

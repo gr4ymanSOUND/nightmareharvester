@@ -12,7 +12,8 @@ const HomePage = () => {
         </h1>
       </div>
       <div className='home-logo-container'>
-        <img src={require('../img/nightmareLogo2.jpeg')}></img>
+        {/* <img src={require('../img/nightmareLogo2.jpeg')}></img> */}
+        <img src={require('../img/harvesterLogo_transparent_update2024.png')}></img>
       </div>
       <article>
         <div className="article-heading">
