@@ -84,7 +84,7 @@ h1 {
 .home-logo-container {
   width: 90%;
   max-width: 900px;
-  margin-top: -2.5rem;
+  margin-top: -1.5rem;
 }
 
 .home-logo-container img {
@@ -165,7 +165,7 @@ article {
 }
 
 .home-logo-container {
-  width: 98%;
+  width: 100%;
 }
 
 h1 {
