@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'production') {
 
 export async function loginUser(username, password) {
   try {
-    const { data } = await axios.post(`/api/users/login`,
+    const { data } = await axios.post(`/nightmareApi/users/login`,
       {
         username: username,
         password: password
@@ -29,7 +29,7 @@ export async function getMe(token) {
         Authorization: `Bearer ${token}`
       }
     };
-    const { data } = await axios.get(`/api/users/me`, auth);
+    const { data } = await axios.get(`/nightmareApi/users/me`, auth);
     return data;
   } catch (error) {
     console.error(error)
@@ -43,7 +43,7 @@ export async function getAllUsers(token) {
         Authorization: `Bearer ${token}`
       }
     };
-    const { data } = await axios.get(`/api/users/`, auth);
+    const { data } = await axios.get(`/nightmareApi/users/`, auth);
     return data;
   } catch (error) {
     console.error(error)
@@ -55,7 +55,7 @@ export async function createUser(newUserData) {
     const payload = {
       newUserData: newUserData
     }
-    const { data } = await axios.post(`/api/users/create`, payload);
+    const { data } = await axios.post(`/nightmareApi/users/create`, payload);
     return data;
   } catch (error) {
     console.error(error)
@@ -73,7 +73,7 @@ export async function editUser(token, userId, newUserData) {
     // const payload = {
     //   newUserData: newUserData
     // }
-    const { data } = await axios.patch(`/api/users/${userId}`, newUserData, auth);
+    const { data } = await axios.patch(`/nightmareApi/users/${userId}`, newUserData, auth);
     return data;
   } catch (error) {
     console.error(error);
@@ -94,7 +94,7 @@ export async function resetUserPassword(token, userId) {
     const payload = {
       basePassword: 'cultFollower24'
     }
-    const { data } = await axios.patch(`/api/users/reset/${userId}`, payload, auth);
+    const { data } = await axios.patch(`/nightmareApi/users/reset/${userId}`, payload, auth);
     return data;
   } catch (error) {
     console.error(error)
@@ -108,7 +108,7 @@ export async function removeUser(token, userId) {
         Authorization: `Bearer ${token}`
       }
     };
-    const { data } = await axios.delete(`/api/users/${userId}`, auth);
+    const { data } = await axios.delete(`/nightmareApi/users/${userId}`, auth);
     return data;
   } catch (error) {
     console.error(error);
@@ -119,7 +119,7 @@ export async function removeUser(token, userId) {
 
 export async function getAllVideos() {
   try {
-    const { data } = await axios.get(`/api/videos/`);
+    const { data } = await axios.get(`nightmareApi/videos/`);
     return data;
   } catch (error) {
     console.error(error)
@@ -136,7 +136,7 @@ export async function createNewVideo(token, newVideoInfo) {
     const payload = {
       newVideoInfo: newVideoInfo
     }
-    const { data } = await axios.post(`/api/videos/create`, payload, auth);
+    const { data } = await axios.post(`nightmareApi/videos/create`, payload, auth);
     return data;
   } catch (error) {
     console.error(error)
@@ -153,7 +153,7 @@ export async function updateVideo(token, videoId, videoInfo) {
     const payload = {
       videoInfo: videoInfo
     }
-    const { data } = await axios.patch(`/api/videos/${videoId}`, payload, auth);
+    const { data } = await axios.patch(`nightmareApi/videos/${videoId}`, payload, auth);
     return data;
   } catch (error) {
     console.error(error)
